@@ -24,7 +24,7 @@ class PluginPackageTests(unittest.TestCase):
         self.manifest = {"$schema": audit_plugin.SCHEMA, "name": "researchvault",
                          "version": metadata.version("researchvault"),
                          "description": audit_plugin.DESCRIPTION,
-                         "repository": "https://github.com/cdc95-04/ResearchVault-release"}
+                         "repository": "https://github.com/cdc95-04/ResearchVault"}
         self.save_manifest()
 
     def save_manifest(self):

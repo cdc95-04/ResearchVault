@@ -39,8 +39,8 @@ ResearchVault 帮你把这些信息留下来：
 **1. 下载代码，创建虚拟环境。**
 
 ```sh
-git clone https://github.com/cdc95-04/ResearchVault-release.git
-cd ResearchVault-release
+git clone https://github.com/cdc95-04/ResearchVault.git
+cd ResearchVault
 python -m venv .venv
 ```
 

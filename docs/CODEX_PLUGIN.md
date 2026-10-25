@@ -29,7 +29,7 @@
       "name": "researchvault",
       "source": {
         "source": "url",
-        "url": "https://github.com/cdc95-04/ResearchVault-release.git",
+        "url": "https://github.com/cdc95-04/ResearchVault.git",
         "sha": "<commit-sha>"
       },
       "policy": {

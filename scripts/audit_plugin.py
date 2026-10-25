@@ -58,7 +58,7 @@ def check_package(root):
             errors.append("Portable manifest must retain the minimal ResearchVault fields")
         for key, expected in (("$schema", SCHEMA), ("name", "researchvault"),
                               ("description", DESCRIPTION),
-                              ("repository", "https://github.com/cdc95-04/ResearchVault-release")):
+                              ("repository", "https://github.com/cdc95-04/ResearchVault")):
             if manifest.get(key) != expected:
                 errors.append("Unexpected manifest " + key)
         if _prohibited_fields(manifest):
