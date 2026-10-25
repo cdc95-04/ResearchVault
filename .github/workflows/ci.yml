@@ -1,0 +1,42 @@
+name: Synthetic validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ['3.10', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install project and audit tooling
+        run: python -m pip install -e ".[pdf]" pip-audit
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Repository and resource audit
+        run: python scripts/audit_repository.py
+      - name: Portable plugin and shared resource audit
+        run: python scripts/audit_plugin.py
+      - name: Explicit synthetic Vault
+        run: python -m researchvault --config examples/synthetic.yaml validate
+      - name: Public-paper annotation contract (no PDF or semantic acceptance)
+        run: python scripts/validate_golden.py --check-inputs
+      - name: Frozen semantic evaluation contract (no scientific or human approval)
+        run: python scripts/semantic_contract.py --sac-revision
+      - name: Recorded retrieval accounting (no model execution or human approval)
+        run: python scripts/benchmark_retrieval.py --check-recorded
+      - name: Dependency consistency
+        run: python -m pip check
+      - name: Audit runtime dependency vulnerabilities
+        run: python scripts/audit_dependencies.py

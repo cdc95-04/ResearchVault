@@ -1,0 +1,17 @@
+schema_version: 2
+review_id: null
+protocol_version: 1
+synthetic: false
+searches: []
+papers: []
+deduplication:
+  performed: false
+  method: null
+  duplicates: []
+citation_rounds: []
+challenges: []
+coverage:
+  dimensions: {}
+  limits: []
+  unsearched: []
+evidence_matrix: []

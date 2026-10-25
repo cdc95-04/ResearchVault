@@ -1,0 +1,8 @@
+schema_version: 2
+vault_root: synthetic-vault
+synthetic: true
+runtime_dir: null
+zotero:
+  library_id: null
+acquisition:
+  enabled: false

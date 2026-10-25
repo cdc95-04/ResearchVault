@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "source_id": "synthetic:bounded_note",
+  "description": "A local note preserves the stated single-setting limitation.",
+  "segments": {
+    "synthetic-page-1": "The toy-table observation remained inconclusive."
+  },
+  "facts": {
+    "outcome": "INCONCLUSIVE"
+  },
+  "allowed_scope": [
+    "simulation",
+    "one-toy-setting"
+  ],
+  "expected_status": "note_supported",
+  "expected_assessment": {
+    "outcome": "INCONCLUSIVE",
+    "setting": "toy-table"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "source_id": "synthetic:publication_swap",
+  "description": "The capture deliberately identifies a different synthetic publication.",
+  "segments": {
+    "synthetic-page-1": "This main text belongs to Synthetic Record Cedar."
+  },
+  "facts": {
+    "artifact": "main text"
+  },
+  "allowed_scope": [
+    "simulation",
+    "one-toy-setting"
+  ],
+  "expected_status": "note_supported",
+  "expected_assessment": {
+    "identity": "resolved"
+  }
+}

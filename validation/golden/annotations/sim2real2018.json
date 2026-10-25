@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "paper_id": "sim2real2018",
+  "role": "C",
+  "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+  "identifiers": {
+    "arxiv": "1710.06537",
+    "doi": "10.1109/ICRA.2018.8460528"
+  },
+  "source_version": "arXiv:1710.06537v3, revised 2018-03-03; all evidence locators use this PDF",
+  "publisher_url": "https://ieeexplore.ieee.org/document/8460528/",
+  "pdf_url": "https://arxiv.org/pdf/1710.06537v3",
+  "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+  "pdf_pages": 8,
+  "authors": [
+    "Xue Bin Peng",
+    "Marcin Andrychowicz",
+    "Wojciech Zaremba",
+    "Pieter Abbeel"
+  ],
+  "year": 2018,
+  "metadata_sources": [
+    "https://arxiv.org/abs/1710.06537",
+    "https://xbpeng.github.io/projects/SimToReal/index.html",
+    "https://xbpeng.github.io/projects/SimToReal/SimToReal_2018.pdf"
+  ],
+  "claims": [
+    {
+      "id": "sim2real2018-c1",
+      "statement": "For puck pushing, Table II reports LSTM success of 0.91 +/- 0.03 in simulation and 0.89 +/- 0.06 on the real robot, with 100 simulation trials and 28 real trials.",
+      "evidence_locator": {
+        "pdf_page": 7,
+        "section": "V-A. Comparison of Architectures",
+        "table_or_figure": "Table II, LSTM row and caption; Figure 7"
+      },
+      "numeric_facts": [
+        {"value": 0.91, "unit": "success_fraction", "condition": "Table II; LSTM; simulation"},
+        {"value": 0.03, "unit": "reported_plus_minus", "condition": "Table II; LSTM; simulation"},
+        {"value": 100, "unit": "trials", "condition": "Table II caption; simulation evaluation"},
+        {"value": 0.89, "unit": "success_fraction", "condition": "Table II; LSTM; real robot"},
+        {"value": 0.06, "unit": "reported_plus_minus", "condition": "Table II; LSTM; real robot"},
+        {"value": 28, "unit": "trials", "condition": "Table II; LSTM; real robot"}
+      ],
+      "scope": "Fetch-arm puck-pushing experiment.",
+      "unsupported_extension": "Does not establish equal performance across arbitrary robots or manipulation tasks."
+    },
+    {
+      "id": "sim2real2018-c2",
+      "statement": "Table III reports lower real-robot success for fixed action timing and omitted observation noise than for the all-parameters condition.",
+      "evidence_locator": {
+        "pdf_page": 7,
+        "section": "V-B. Ablation",
+        "table_or_figure": "Table III, all / fixed action timestep / no observation noise rows"
+      },
+      "numeric_facts": [
+        {"value": 0.89, "unit": "success_fraction", "condition": "Table III; all"},
+        {"value": 0.06, "unit": "reported_plus_minus", "condition": "Table III; all"},
+        {"value": 28, "unit": "trials", "condition": "Table III; all"},
+        {"value": 0.29, "unit": "success_fraction", "condition": "Table III; fixed action timestep"},
+        {"value": 0.11, "unit": "reported_plus_minus", "condition": "Table III; fixed action timestep"},
+        {"value": 17, "unit": "trials", "condition": "Table III; fixed action timestep"},
+        {"value": 0.25, "unit": "success_fraction", "condition": "Table III; no observation noise"},
+        {"value": 0.12, "unit": "reported_plus_minus", "condition": "Table III; no observation noise"},
+        {"value": 12, "unit": "trials", "condition": "Table III; no observation noise"}
+      ],
+      "scope": "Reported LSTM ablations on the real Fetch arm.",
+      "unsupported_extension": "Does not establish universal causal effect sizes or a formal significance test."
+    },
+    {
+      "id": "sim2real2018-c3",
+      "statement": "Dynamics parameters are sampled at episode start; mass and damping remain fixed within an episode, while action timing and observation noise vary at individual timesteps.",
+      "evidence_locator": {
+        "pdf_page": 4,
+        "section": "IV-C. Dynamics Randomization",
+        "table_or_figure": null
+      },
+      "numeric_facts": [],
+      "scope": "The paper's simulation training procedure.",
+      "unsupported_extension": "Do not infer that every random quantity stays fixed throughout an episode."
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "id": "sim2real2018-q1",
+      "query": "fixed action timestep",
+      "expected_claim_ids": ["sim2real2018-c2"],
+      "kind": "exact_term"
+    },
+    {
+      "id": "sim2real2018-q2",
+      "query": "Which simulated properties stay unchanged during one rollout, and which disturbances are redrawn while the controller runs?",
+      "expected_claim_ids": ["sim2real2018-c3"],
+      "kind": "semantic_paraphrase"
+    }
+  ],
+  "identity_cautions": [
+    "The first arXiv submission is dated 2017-10-18; the author project identifies ICRA 2018. The year field records the conference year, not the original preprint year.",
+    "The DOI is confirmed in the author's project bibliography and the arXiv related-DOI field. The IEEE landing page required an anti-bot check and was not used to extract metadata.",
+    "The author project's bibliography gives pages 1-8, whereas its linked conference PDF carries printed pages 3803-3810. These are pagination conventions for related manifestations, not evidence of distinct papers.",
+    "The evidence PDF is version-pinned arXiv v3. An unversioned arXiv identifier and the conference DOI are related identities, not a claim that their PDF bytes or all revisions are identical.",
+    "The author-hosted conference PDF was checked for publication metadata only; the annotations use the arXiv v3 page sequence."
+  ],
+  "review": {
+    "status": "agent_independent_pending_human",
+    "human_reviewed": false,
+    "implementation_outputs_seen": false,
+    "independence_scope": "No ResearchVault output, capture, retrieval result or Golden Set evaluation for this paper was read. Earlier work in this session covered read-only guards and synthetic regressions; annotation facts came only from public primary sources.",
+    "visual_check": "Rendered arXiv v3 PDF page 7; checked Table II and Table III row labels, columns, values, uncertainty signs and trial counts against extraction.",
+    "uncertainty_caution": "reported_plus_minus preserves displayed uncertainty without assigning an unverified standard-deviation, standard-error or confidence-interval interpretation.",
+    "queries_predefined": true,
+    "queries_tested": false,
+    "retrieval_expectation_scope": "Expected claim IDs express source relevance, not measured retrieval success."
+  }
+}

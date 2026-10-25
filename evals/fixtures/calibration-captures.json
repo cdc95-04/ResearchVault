@@ -1,0 +1,286 @@
+{
+  "run_id": "hand-authored-calibration-v1",
+  "producer_version": "fixture-author-v1",
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "captures": {
+    "bounded_note": {
+      "source_digest": "4a68e14d125f7840344dff85d51db2cdbf2a3af2d72672cc9ba7b2c2e896c976",
+      "output": {
+        "source_id": "synthetic:bounded_note",
+        "claims": [
+          {
+            "fact_id": "outcome",
+            "value": "INCONCLUSIVE"
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "The toy-table observation remained inconclusive."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "outcome": "INCONCLUSIVE",
+          "setting": "toy-table"
+        },
+        "number_claims": []
+      }
+    },
+    "invented_quote": {
+      "source_digest": "98f87f9261c9bc6c4674cc0d150c84aec848eb3cbb42b4ded4d5d645a8f7fe14",
+      "output": {
+        "source_id": "synthetic:invented_quote",
+        "claims": [
+          {
+            "fact_id": "attempts",
+            "value": 4
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "All trials succeeded with zero uncertainty."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "attempts": 4
+        },
+        "number_claims": []
+      }
+    },
+    "publication_swap": {
+      "source_digest": "c2a19d267d7e91c7c4b69dd84ae610bde0cb846528480acb894aff7940fd95f7",
+      "output": {
+        "source_id": "synthetic:another-record",
+        "claims": [
+          {
+            "fact_id": "artifact",
+            "value": "main text"
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "This main text belongs to Synthetic Record Cedar."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "identity": "resolved"
+        },
+        "number_claims": []
+      }
+    },
+    "scope_escalation": {
+      "source_digest": "b7e84e4930a6bf90b0dd8a6f5d9aaac472ca163b40c5839b02a2366db7a65b2e",
+      "output": {
+        "source_id": "synthetic:scope_escalation",
+        "claims": [
+          {
+            "fact_id": "setting",
+            "value": "simulation"
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "Only a simulated toy joint was evaluated."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting",
+          "hardware-transfer"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "setting": "simulation"
+        },
+        "number_claims": []
+      }
+    },
+    "all_attempts": {
+      "source_digest": "1d3fd44e0a6884f2a546583092d96f05b69b533bf942461dcd8e8aade9c6ef18",
+      "output": {
+        "source_id": "synthetic:all_attempts",
+        "claims": [
+          {
+            "fact_id": "attempted",
+            "value": 5
+          },
+          {
+            "fact_id": "aborted",
+            "value": 1
+          },
+          {
+            "fact_id": "failed",
+            "value": 2
+          },
+          {
+            "fact_id": "completed",
+            "value": 2
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "Five attempts included one abort, two failures and two completed runs."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "denominator": 5,
+          "completed": 2,
+          "retained_aborted": 1,
+          "retained_failed": 2
+        },
+        "number_claims": []
+      }
+    },
+    "inconclusive_promotion": {
+      "source_digest": "b0f0630b3753f42d625b08a77de8dc462054ad5047fef28a1047c488cc7e4f0c",
+      "output": {
+        "source_id": "synthetic:inconclusive_promotion",
+        "claims": [
+          {
+            "fact_id": "outcome",
+            "value": "INCONCLUSIVE"
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "The interval crossed the predeclared decision boundary."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "outcome": "SUPPORTED"
+        },
+        "number_claims": []
+      }
+    },
+    "bounded_review": {
+      "source_digest": "8a2a9574ffdd67074faa405052788756a128144f26f4fe62f035f89b26c89776",
+      "output": {
+        "source_id": "synthetic:bounded_review",
+        "claims": [
+          {
+            "fact_id": "challenge_executed",
+            "value": false
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "The challenge query was planned but has not been executed."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "gap_status": "unverified",
+          "coverage_limit": "challenge query not executed"
+        },
+        "number_claims": []
+      }
+    },
+    "number_drift": {
+      "source_digest": "11c500ad12ec8b1d9a86e846c5e52a45724f5d998d65cfa76ece626484ef4cdb",
+      "output": {
+        "source_id": "synthetic:number_drift",
+        "claims": [
+          {
+            "fact_id": "success_rate",
+            "value": 0.5
+          }
+        ],
+        "quotes": [
+          {
+            "locator": "synthetic-page-1",
+            "text": "Two of four synthetic attempts met the toy success rule."
+          }
+        ],
+        "evidence_scope": [
+          "simulation",
+          "one-toy-setting"
+        ],
+        "evidence_status": "note_supported",
+        "assessment": {
+          "success_rate": 0.5
+        },
+        "number_claims": [
+          {
+            "claim_id": "success_rate",
+            "unit": "fraction",
+            "tolerance": 0,
+            "required_locations": [
+              "abstract",
+              "body",
+              "table",
+              "caption",
+              "ledger"
+            ],
+            "occurrences": [
+              {
+                "location": "abstract",
+                "unit": "fraction",
+                "value": 0.5
+              },
+              {
+                "location": "body",
+                "unit": "fraction",
+                "value": 0.5
+              },
+              {
+                "location": "table",
+                "unit": "fraction",
+                "value": 0.5
+              },
+              {
+                "location": "caption",
+                "unit": "fraction",
+                "value": 0.75
+              },
+              {
+                "location": "ledger",
+                "unit": "fraction",
+                "value": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

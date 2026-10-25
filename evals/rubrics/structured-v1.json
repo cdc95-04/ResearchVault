@@ -1,0 +1,45 @@
+{
+  "version": "1",
+  "description": "Exact structured assertions only; no semantic model judge.",
+  "criteria": [
+    {
+      "id": "fabrication",
+      "severity": "critical",
+      "operator": "grounded_claims"
+    },
+    {
+      "id": "source_identity",
+      "severity": "critical",
+      "operator": "equals",
+      "field": "source_id",
+      "expected_field": "source_id"
+    },
+    {
+      "id": "evidence_ceiling",
+      "severity": "critical",
+      "operator": "subset",
+      "field": "evidence_scope",
+      "expected_field": "allowed_scope"
+    },
+    {
+      "id": "evidence_label",
+      "severity": "critical",
+      "operator": "equals",
+      "field": "evidence_status",
+      "expected_field": "expected_status"
+    },
+    {
+      "id": "behavior",
+      "severity": "major",
+      "operator": "equals",
+      "field": "assessment",
+      "expected_field": "expected_assessment"
+    },
+    {
+      "id": "numerical_consistency",
+      "severity": "major",
+      "operator": "mapped_numbers",
+      "field": "number_claims"
+    }
+  ]
+}

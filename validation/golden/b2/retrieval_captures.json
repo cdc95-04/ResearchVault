@@ -1,0 +1,251 @@
+{
+  "review_kind": "agent_review",
+  "human_review_status": "pending",
+  "expected_answers_seen": false,
+  "plan_mutated_after_execution": false,
+  "input_packet_digest": "d36dca9179535ca9545a8cda0843c797bc56c5bef628191dfccab4b6d5e1ae37",
+  "input_packet_digest_method": "SHA-256 of UTF-8 input packet text with line endings normalized to LF",
+  "review_scope": "Original-query relevance and source support for every actually returned paper. Agent review is not human approval. No expected answers, Golden data, old annotations, comparison reports or validation files were inspected.",
+  "source_identity_verified": true,
+  "source_review_method": "Compared actual PDF SHA-256 values with the packet; extracted the three identified PDFs, inspected complete relevant source pages, and visually checked ten relevant rendered pages. PDF page numbers below are observed one-based document pages.",
+  "requests": [
+    {
+      "request_id": "request-1",
+      "judgments": [
+        {
+          "paper_id": "diffusion_policy2023",
+          "verdict": "PASS",
+          "answer": "Main text III.D reports DDIM with 100 training denoising iterations and 10 inference denoising iterations, with 0.1 s inference latency on an Nvidia 3080 in its real-world experiments. The 100 counts denoising iterations, not total optimizer training updates. Appendix D separately reports 16 inference denoising iterations for real-world benchmarks; that source discrepancy remains unresolved, so 10 is only the main-text configuration and the 0.1 s latency is not established for the appendix's 16-step configuration.",
+          "reason": "The main-text statement directly answers the original method, hardware, iteration and latency query, and the capture matches that passage when interpreted as denoising steps. PASS is conditional on preserving its main-text scope and the appendix discrepancy; it does not certify one unified inference configuration or an end-to-end robot control rate.",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 4,
+            "locator": "Section III.D, Accelerating Inference for Real-time Control, final paragraph: real-world DDIM 100 training / 10 inference denoising iterations, 0.1 s, Nvidia 3080"
+          },
+          "additional_evidence_anchors": [
+            {
+              "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+              "pdf_page": 14,
+              "locator": "Appendix D, Hyperparameters, paragraph below Figure 13: simulation iDDPM 100 training/inference denoising iterations; real-world DDIM inference denoising iterations reduced to 16"
+            }
+          ],
+          "unresolved_source_discrepancy": {
+            "main_text": {
+              "pdf_page": 4,
+              "condition": "real-world experiments; Nvidia 3080; reported 0.1 s latency",
+              "inference_denoising_iterations": 10
+            },
+            "appendix": {
+              "pdf_page": 14,
+              "condition": "real-world benchmarks; no 3080 latency stated in this paragraph",
+              "inference_denoising_iterations": 16
+            },
+            "resolution_status": "HUMAN_REVIEW_REQUIRED"
+          }
+        },
+        {
+          "paper_id": "sac2018",
+          "verdict": "FAIL",
+          "answer": null,
+          "reason": "The inspected SAC source concerns maximum-entropy actor-critic learning and benchmark evaluation. It supplies no DDIM training/inference denoising counts or Nvidia 3080 inference latency. An iteration or evaluation-step match does not answer this hardware-specific query.",
+          "evidence_anchor": {
+            "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+            "pdf_page": 7,
+            "locator": "Section 5.1, Comparative Evaluation: evaluation rollout interval is 1000 environment steps, not DDIM inference iterations or GPU latency"
+          }
+        },
+        {
+          "paper_id": "sim2real2018",
+          "verdict": "FAIL",
+          "answer": null,
+          "reason": "Its training-cost passage reports about 8000 update iterations and 100 million samples on a 100-core simulation cluster. Those quantities do not establish DDIM denoising counts or Nvidia 3080 latency; replacing the requested operation or hardware would be a false answer.",
+          "evidence_anchor": {
+            "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+            "pdf_page": 6,
+            "locator": "Section V, Experiments, ADAM training paragraph before V.A: approximately 8000 update iterations, 100 million samples, 8 hours on a 100-core cluster"
+          }
+        }
+      ]
+    },
+    {
+      "request_id": "request-2",
+      "judgments": [
+        {
+          "paper_id": "diffusion_policy2023",
+          "verdict": "PASS",
+          "answer": "Use receding-horizon execution: condition on the latest To observations, predict Tp actions, execute only Ta actions without replanning, then repeat with fresh observations. Ta trades action consistency against reaction time; it is distinct from the observation and prediction horizons.",
+          "reason": "Section II.C explicitly connects future action-sequence prediction with prompt reactions to unexpected observations and defines the executed prefix. This answers the mechanism in the original question without inferring a world model, VLA or unlimited long-horizon success.",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 3,
+            "locator": "Section II.C, Closed-loop action-sequence prediction paragraph and Figure 3: To observation horizon, Tp prediction horizon, Ta execution horizon"
+          }
+        }
+      ]
+    },
+    {
+      "request_id": "request-3",
+      "judgments": [
+        {
+          "paper_id": "sac2018",
+          "verdict": "PASS",
+          "answer": "In this SAC paper, temperature alpha weights policy entropy relative to reward in the maximum-entropy objective, thereby controlling the stochasticity of the optimal policy. As alpha approaches zero, the conventional expected-reward objective is recovered.",
+          "reason": "The paper explicitly defines a temperature parameter in Section 3.2 and Equation 1. This is a source-scoped answer to the ambiguous query, not a claim that SAC temperature is identical to every sampling, softmax or physical temperature parameter, and not a claim about a later automatic-temperature SAC variant.",
+          "evidence_anchor": {
+            "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+            "pdf_page": 3,
+            "locator": "Section 3.2, Maximum Entropy Reinforcement Learning, Equation 1 and its following temperature-alpha paragraph"
+          }
+        }
+      ]
+    },
+    {
+      "request_id": "request-4",
+      "judgments": [
+        {
+          "paper_id": "sac2018",
+          "verdict": "PASS",
+          "answer": "Train five instances per algorithm with different random seeds; each performs one evaluation rollout every 1000 environment steps. Plot the mean return across the five trials as the solid curve, and the minimum-to-maximum return range as shading.",
+          "reason": "The benchmark protocol explicitly gives both evaluation cadence and aggregation across repeated seed runs. The range is not a confidence interval or standard deviation. The original query does not name a paper, so this independently supported protocol is responsive.",
+          "evidence_anchor": {
+            "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+            "pdf_page": 7,
+            "locator": "Section 5.1, Comparative Evaluation, opening paragraph describing Figure 1: five seeds, one rollout every 1000 environment steps, mean curve and min/max shading"
+          }
+        },
+        {
+          "paper_id": "diffusion_policy2023",
+          "verdict": "PASS",
+          "answer": "For the simulation benchmarks, results use checkpoints saved every 50 epochs. The reported last-checkpoint result averages the last 10 checkpoints across three training seeds and 50 environment initializations, totaling 1500 experiments. Robomimic and Push-T additionally report the average of best-performing checkpoints. The stated 50-epoch cadence is the checkpoint-saving cadence; the text does not separately specify an online evaluation callback schedule.",
+          "reason": "Section V.B explicitly states the reported checkpoint cadence and repeated-experiment aggregation, with Table I/II clarifying the max-performance versus last-ten-checkpoint format. This directly supplies another source-scoped benchmark protocol for the paper-unspecified query while preserving the distinction between checkpoint saving and evaluation timing.",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 7,
+            "locator": "Section V.B, Evaluation Methodology: last 10 checkpoints saved every 50 epochs, 3 seeds, 50 initializations, 1500 experiments, and best-performing-checkpoint reporting"
+          },
+          "additional_evidence_anchors": [
+            {
+              "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+              "pdf_page": 6,
+              "locator": "Table I caption and Table II caption: max performance / average of last 10 checkpoints, each averaged across 3 seeds and 50 initial conditions"
+            }
+          ]
+        },
+        {
+          "paper_id": "sim2real2018",
+          "verdict": "FAIL",
+          "answer": "Partial information only: each policy is evaluated over 100 randomized simulation episodes, success is the fraction of episodes meeting the goal, and four random-seed policies are trained per architecture. A performance-check interval and an explicit cross-seed aggregation rule are not stated in the inspected protocol.",
+          "reason": "The paper provides evaluation sample counts and repeated training seeds, but these do not answer both how often performance was checked and how repeated benchmark runs were aggregated. It would be unjustified to infer a cadence or interpret displayed plus/minus values as a particular cross-seed statistic.",
+          "evidence_anchor": {
+            "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+            "pdf_page": 6,
+            "locator": "Section V.A, Comparison of Architectures, final paragraph and Figure 6 caption: 100 evaluation episodes, four random-seed policies per architecture"
+          },
+          "additional_evidence_anchors": [
+            {
+              "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+              "pdf_page": 7,
+              "locator": "Table II caption and Figure 7 discussion: simulation evaluation over 100 trials and separate real-robot trial counts; no evaluation cadence or defined uncertainty aggregation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "request-5",
+      "judgments": [
+        {
+          "paper_id": "sim2real2018",
+          "verdict": "PASS",
+          "answer": "The fixed-action-timestep ablation trains without randomizing the interval for which an action is applied before the policy is queried again. On the real Fetch pushing task, Table III reports 0.29 +/- 0.11 success over 17 trials, versus 0.89 +/- 0.06 over 28 trials with all randomizations. The table does not define the displayed uncertainty, and it does not give a separate numerical timestep for the fixed ablation.",
+          "reason": "The source explicitly names and defines the fixed-action-timestep condition and reports its scoped ablation result. It separates action timing from the 0.002 s simulator integration step and from the randomized baseline's 0.04 s default control interval.",
+          "evidence_anchor": {
+            "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+            "pdf_page": 7,
+            "locator": "Section V.B, Ablation, and Table III: fixed action timestep 0.29 +/- 0.11, 17 trials; all 0.89 +/- 0.06, 28 trials"
+          },
+          "additional_evidence_anchors": [
+            {
+              "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+              "pdf_page": 4,
+              "locator": "Section IV.C: timestep between actions is how long an action is applied before querying the policy again"
+            },
+            {
+              "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+              "pdf_page": 5,
+              "locator": "Section V: 0.002 s simulator step, 20 simulation steps per default control step, and randomized action interval delta-t = 0.04 s + Exp(lambda)"
+            }
+          ]
+        },
+        {
+          "paper_id": "diffusion_policy2023",
+          "verdict": "UNCERTAIN",
+          "answer": "Related timing evidence only: the UR5 setup uses 10 Hz policy commands interpolated to 125 Hz robot commands; the Franka setup uses 10 Hz policies and a mid-level controller around 1 kHz. These are separate nominal clocks, not evidence of a fixed-versus-randomized action-timestep ablation or a verified constant realized action duration.",
+          "reason": "The three-word original query does not clarify whether it seeks nominal policy timing or a fixed-action-timestep condition. The PDF supports control rates but does not establish the stronger fixed-duration interpretation used in the frozen plan. Preserve this as a related candidate, exclude it from confirmed answers, and do not substitute inference latency for an action timestep.",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 16,
+            "locator": "Appendix I.3, UR5 robot station, and Appendix J, Franka robot station: 10 Hz policy, 125 Hz UR5 command interpolation, approximately 1 kHz Franka mid-level controller"
+          }
+        },
+        {
+          "paper_id": "sac2018",
+          "verdict": "FAIL",
+          "answer": null,
+          "reason": "MDP time indices and the evaluation interval measured in environment steps do not specify a constant physical interval between actions. The source supplies neither an action-duration definition nor a fixed-action-timestep condition responsive to the original query.",
+          "evidence_anchor": {
+            "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+            "pdf_page": 3,
+            "locator": "Section 3.1, Notation: continuous state/action MDP with indexed transitions; no fixed physical action timestep is defined"
+          }
+        }
+      ]
+    },
+    {
+      "request_id": "request-6",
+      "judgments": [
+        {
+          "paper_id": "sim2real2018",
+          "verdict": "PASS",
+          "answer": "Simulation dynamics properties such as link mass, joint damping, puck mass/friction/damping, table height and controller gains are sampled at episode start and held through that episode. The latency-distribution rate lambda is also fixed within the episode, while the action interval is redrawn each step as 0.04 s + Exp(lambda). Independent Gaussian observation noise is applied each step; the training setup additionally adds Gaussian action-exploration noise each step.",
+          "reason": "Sections IV.C and V explicitly distinguish episode-persistent dynamics and distribution parameters from per-step draws. The answer does not claim all 95 quantities are redrawn every timestep or confuse a fixed noise-distribution parameter with a persistent realized noise sample.",
+          "evidence_anchor": {
+            "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+            "pdf_page": 4,
+            "locator": "Section IV.C, Dynamics Randomization: episode-start dynamics sampling and persistence; mass/damping constant, action timestep and observation noise varying each timestep"
+          },
+          "additional_evidence_anchors": [
+            {
+              "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+              "pdf_page": 5,
+              "locator": "Section V and Table I: episode-start draws, delta-t = 0.04 s + Exp(lambda), lambda held within each episode, table of randomized property ranges"
+            },
+            {
+              "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+              "pdf_page": 6,
+              "locator": "Continuation of Section V: Gaussian observation noise each step, zero mean and standard deviation 5% of feature running standard deviation; Gaussian exploration noise each step with 0.01 rad standard deviation"
+            }
+          ]
+        },
+        {
+          "paper_id": "diffusion_policy2023",
+          "verdict": "FAIL",
+          "answer": null,
+          "reason": "The source describes Gaussian initialization and iterative noise in generating an action sequence, and simulation tasks with varied initial conditions. Those are not a protocol specifying episode-constant simulator properties versus disturbances redrawn during controller execution. A perturbation or stochastic-sampling keyword match does not answer this temporal-scope question.",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 4,
+            "locator": "Section IV.A, Model Multi-Modal Action Distributions: Gaussian initialization and perturbations during diffusion sampling, rather than simulator-property persistence or runtime disturbance redraw schedules"
+          },
+          "additional_evidence_anchors": [
+            {
+              "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+              "pdf_page": 7,
+              "locator": "Section V.A, Push-T and Multimodal Block Pushing descriptions: varied initial conditions and scripted demonstration choices, not the requested per-rollout versus per-step dynamics-randomization protocol"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "review_kind": "agent_review",
+  "reviewer": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "ultra",
+    "independent_context": true,
+    "prior_verdict_seen": false,
+    "generation_reasoning_seen": false
+  },
+  "human_review_status": "pending",
+  "independence_statement": "本次判断仅依据指定冻结PDF的相关页面与消息给定候选；未读取旧annotation、comparison、query verdict或Golden。不存在human approval。",
+  "source_pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+  "reviews": [
+    {
+      "case_id": "diffusion-policy-ddim-source-discrepancy",
+      "claim": "Real-world DDIM uses 100 training denoising iterations and 10 inference iterations with 0.1 seconds inference latency on Nvidia 3080.",
+      "question": "候选能否不加来源节限定，作为整个冻结PDF的一致事实？",
+      "source_accounts": [
+        {
+          "account": "main_text",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 4,
+            "locator": "Section III.D, Accelerating Inference for Real-time Control"
+          },
+          "original_values": {
+            "training_denoising_iterations": 100,
+            "inference_denoising_iterations": 10,
+            "inference_latency_seconds": 0.1,
+            "hardware": "Nvidia 3080 GPU"
+          },
+          "conditions": "real-world experiments；使用DDIM分离训练与推理去噪步数。此段未指定CNN/Transformer、任务、模型大小或独立计时配置。",
+          "scope_verdict": "PASS",
+          "scope_verdict_reason": "带有主文III.D归属的转述受到该段直接支持。"
+        },
+        {
+          "account": "appendix_prose",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 14,
+            "locator": "Appendix D, Hyperparameters; paragraph beginning On simulation benchmarks"
+          },
+          "original_values": {
+            "realworld_sampler": "DDIM",
+            "realworld_inference_denoising_iterations": 16,
+            "realworld_training_denoising_iterations_in_this_sentence": null,
+            "realworld_numeric_latency_in_this_sentence": null,
+            "realworld_hardware_in_this_sentence": null,
+            "simulation_sampler": "iDDPM",
+            "simulation_training_denoising_iterations": 100,
+            "simulation_inference_denoising_iterations": 100
+          },
+          "conditions": "realworld benchmarks的DDIM推理减少为16步；100/100在该段明确对应simulation iDDPM。该句仅称降低延迟，未给16步的数值延迟。",
+          "scope_verdict": "PASS",
+          "scope_verdict_reason": "附录D直接支持实机DDIM 16步；不能将主文10步的0.1秒移接至此。"
+        },
+        {
+          "account": "appendix_cnn_table",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 15,
+            "locator": "Table VI, CNN-based Diffusion Policy; Real Push-T, Real Pour, Real Spread, Real Mug Flip rows; D-Iters Train / Eval columns"
+          },
+          "original_values": {
+            "training_denoising_iterations": 100,
+            "inference_denoising_iterations": 16,
+            "backbone": "CNN",
+            "tasks": [
+              "Real Push-T",
+              "Real Pour",
+              "Real Spread",
+              "Real Mug Flip"
+            ],
+            "diffusion_parameters_millions": 67,
+            "vision_parameters_millions": 22
+          },
+          "conditions": "四个CNN实机任务均为位置控制，D-Iters Train/Eval列均为100/16；表注把Eval明确解释为推理扩散迭代数。",
+          "scope_verdict": "PASS",
+          "scope_verdict_reason": "表VI补足实机100训练步，并独立支持16推理步。"
+        },
+        {
+          "account": "appendix_transformer_table",
+          "evidence_anchor": {
+            "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+            "pdf_page": 15,
+            "locator": "Table VII, Transformer-based Diffusion Policy; Real Push-T row; D-Iters Train / Eval columns"
+          },
+          "original_values": {
+            "training_denoising_iterations": 100,
+            "inference_denoising_iterations": 16,
+            "backbone": "Transformer",
+            "task": "Real Push-T",
+            "diffusion_parameters_millions": 80,
+            "vision_parameters_millions": 22
+          },
+          "conditions": "表VII列出的Transformer实机Push-T采用位置控制，训练/推理迭代仍为100/16。",
+          "scope_verdict": "PASS",
+          "scope_verdict_reason": "Transformer实机行也为16，不能直接把10/16解释为两种网络的差异。"
+        }
+      ],
+      "reconciliation": {
+        "explicit_model_or_setup_explanation_found": false,
+        "checked_context_pdf_pages": [
+          3,
+          4,
+          5,
+          14,
+          15
+        ],
+        "model_difference_assessment": "p3–4确实介绍CNN与Transformer两种结构，p14也讨论模型与超参数差异；然而未将主文10步对应某种结构，且p15两种结构的实机行都用16步。架构差异不足以解释这两个数值。",
+        "other_setup_assessment": "另行计时配置、版本差异或编辑遗留均可设想，但指定原文未给证据。不得选定其中任何一种作为已证实解释。",
+        "training_assessment": "100训练去噪步在主文及附录实机表中一致。",
+        "inference_assessment": "主文实机10步与附录实机16步未获文本消解，须保留来源内部差异。",
+        "latency_assessment": "0.1秒及3080只由主文10步描述支持；已读附录未提供16步对应的数值延迟，不能合并成100/16/0.1秒。"
+      },
+      "source_evidence": "主文p4实机DDIM给100/10和3080上0.1秒；附录p14实机DDIM给16步；p15的CNN四任务和Transformer Push-T均为100/16。未发现解释10与16条件差别的明确文字。",
+      "missing_qualifier": "须标明主文III.D报告100/10、0.1秒与3080，并同时披露附录D及表VI/VII报告实机100/16；未解决的来源差异不能省略。",
+      "scope_mismatch": "候选准确转述主文，但不足以作为整个PDF的统一实机设置。",
+      "condition_mismatch": "原文未建立10与16对应不同模型/任务/设置的映射；不得自行补出条件或把10步延迟归于16步。",
+      "verdict": "HUMAN_REVIEW_REQUIRED",
+      "reason": "不允许无来源节限定地确认为全文一致事实。应保留主文与附录原值并请求进一步核对；此处不能判定哪一个推理步数为唯一正确配置。",
+      "flags": [
+        "GOLDEN_REVIEW_REQUIRED"
+      ],
+      "golden_review": {
+        "frozen_golden_read": false,
+        "original_value": "Real-world DDIM uses 100 training denoising iterations and 10 inference iterations with 0.1 seconds inference latency on Nvidia 3080.",
+        "original_value_provenance": "本次消息给定候选及主文III.D；不是读取冻结Golden获得的值。",
+        "reason": "若Golden将10推理步及0.1秒作为整个PDF无条件统一事实，应复核其来源范围并记录内部差异；本次未读取或修改Golden，亦未将16替换为新Gold。"
+      },
+      "supported_section_qualified_restatement": "主文III.D报告实机DDIM采用100次训练去噪、10次推理，在Nvidia 3080上推理延迟为0.1秒；附录D及表VI/VII则将实机推理列为16次，表中训练仍为100次。该PDF未明确解释二者的设置差异。",
+      "evidence_anchor": {
+        "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+        "pdf_page": 4,
+        "locator": "Section III.D; contrast Appendix D on PDF page 14 and Tables VI–VII on PDF page 15"
+      }
+    }
+  ]
+}

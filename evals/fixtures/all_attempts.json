@@ -1,0 +1,30 @@
+{
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "source_id": "synthetic:all_attempts",
+  "description": "Aborted and failed attempts remain in the denominator.",
+  "segments": {
+    "synthetic-page-1": "Five attempts included one abort, two failures and two completed runs."
+  },
+  "facts": {
+    "attempted": 5,
+    "aborted": 1,
+    "failed": 2,
+    "completed": 2
+  },
+  "allowed_scope": [
+    "simulation",
+    "one-toy-setting"
+  ],
+  "expected_status": "note_supported",
+  "expected_assessment": {
+    "denominator": 5,
+    "completed": 2,
+    "retained_aborted": 1,
+    "retained_failed": 2
+  }
+}

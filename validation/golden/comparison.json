@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "status": "agent_comparison_pending_human",
+    "human_reviewed": false,
+    "reviewer": "golden_sac agent",
+    "reviewed_on": "2026-09-28",
+    "capture_freeze_commit": "5b9a97d075726d2ce5cb50ea62971edf8689ced9",
+    "capture_files_byte_identical_to_freeze": true,
+    "inputs": "Frozen agent captures, independent annotation JSON, original source PDFs, and rendered evidence pages only.",
+    "application_outputs_seen": false,
+    "implementation_source_seen": false,
+    "tests_seen": false,
+    "author_overlap": "This reviewer authored sac2018 annotations earlier. A is a disclosed self-review against a separately produced blind capture; B and C are cross-agent annotation reviews.",
+    "capture_independence": "The parent reports creating and freezing captures from blind tasks and source PDFs before reading annotations. The comparison verified their bytes against the freeze commit; it cannot independently observe the parent's earlier mental state.",
+    "auxiliary_review": "A source-only subagent checked Diffusion Policy evaluation aggregation and Sim-to-Real table uncertainty/trial conditions without reading capture JSON or application files.",
+    "human_review_required": "All judgments remain agent judgments. No human approval or blinded human evaluation is claimed."
+  },
+  "input_manifest": [
+    {
+      "paper_id": "sac2018",
+      "capture_sha256": "9d4d97a4cccc8ffbf2a1aecaeac78e370c0c2222b7d280fd4183caa7c5df8992",
+      "annotation_sha256": "ad9243ec6940347b7960d36ae43029301eb7b9f0a708d055710a120a8f34a72f",
+      "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "capture_sha256": "75d8cbc503948ebf1c456ac5f883d15b6a73cafef92b4c471b308effdf7fd853",
+      "annotation_sha256": "582dc476cbc9947f8c35675ca32bba18d54afa01055606163a65e22b921fb065",
+      "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "capture_sha256": "070f86289f685f5f688c14dfdc489f51075512121b28cbfbd680078da15cfe07",
+      "annotation_sha256": "fe936ec53927913fa5ab7a6b1e366dce8e7b7beaaea0491a0e85049579dc30dc",
+      "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8"
+    }
+  ],
+  "assessment_rules": {
+    "statement_support": "pass means expected statement details are covered and source-supported; partial means supported capture content omits an expected detail; fail means material contradiction or unsupported content. These are coverage judgments, not retrieval labels.",
+    "numeric_mapping": "Every mapping was selected by named quantity, unit, method/task/phase, and experimental condition. Only after semantic mapping may numerical equality be checked.",
+    "numeric_denominator": "Count annotation numeric_facts entries only. A detail stated elsewhere, or an extra capture number, does not enter this denominator. Repeated fact entries are not independent experiments.",
+    "locator_match": "The capture points to the same source passage/table as the annotation, including referenced captions or additional locators. A protocol paragraph may refer to a figure on another page."
+  },
+  "records": [
+    {
+      "paper_id": "sac2018",
+      "claim_id": "sac2018-c01",
+      "statement_support": "partial",
+      "statement_support_reason": "The capture correctly describes reward plus entropy and temperature weighting, but omits the limiting case contained in the expected statement.",
+      "locator_match": true,
+      "locator_reason": "Both identify publisher PDF page 3, Section 3.2, Equation 1.",
+      "scope_assessment": "The capture stays within the objective definition. Its hardware-transfer caveat adds no unsupported result.",
+      "numeric_mappings": [],
+      "missing_expected_details": [
+        "The reward-only objective is recovered in the limit as alpha approaches zero."
+      ]
+    },
+    {
+      "paper_id": "sac2018",
+      "claim_id": "sac2018-c02",
+      "statement_support": "pass",
+      "statement_support_reason": "The independently trained critics, minimum selection, update roles, and bias-reduction purpose agree.",
+      "locator_match": true,
+      "locator_reason": "Both identify publisher PDF page 5, Section 4.2, Algorithm 1 and its discussion; the expected equations are in that passage.",
+      "scope_assessment": "Both concern the presented SAC update rule. Neither asserts complete bias elimination; the capture separates later variants.",
+      "numeric_mappings": [
+        {
+          "golden_index": 0,
+          "capture_name": "q_functions",
+          "mapping_reason": "This name denotes the independently trained Q estimators in the capture statement. Its functions unit means Q-functions here, and its training condition matches the presented algorithm, rather than an unrelated count.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        }
+      ],
+      "missing_expected_details": []
+    },
+    {
+      "paper_id": "sac2018",
+      "claim_id": "sac2018-c03",
+      "statement_support": "pass",
+      "statement_support_reason": "The capture preserves repeated runs, rollout frequency, and the meanings of curves and shading.",
+      "locator_match": true,
+      "locator_reason": "Both identify PDF page 7, Section 5.1 and the Figure 1 protocol. Figure 1 itself is on page 6; this is not a page mismatch.",
+      "scope_assessment": "Both restrict the result to the reported benchmark protocol. The capture correctly avoids confidence-interval and hardware-replication interpretations.",
+      "numeric_mappings": [
+        {
+          "golden_index": 0,
+          "capture_name": "training_instances",
+          "mapping_reason": "Training instances are separately seeded runs per algorithm in the capture statement and number condition; this is the expected run count, not evaluation rollouts.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 1,
+          "capture_name": "evaluation_rollouts",
+          "mapping_reason": "The named quantity counts evaluation rollouts per evaluation interval in both records. Singular rollout and evaluation rollout are equivalent units in this context.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 2,
+          "capture_name": "evaluation_interval",
+          "mapping_reason": "This named interval is measured in environment steps between evaluation rollouts. The surrounding statement applies it to each seeded training instance, matching the expected per-run condition.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        }
+      ],
+      "missing_expected_details": []
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "claim_id": "diffusion_policy2023_c1",
+      "statement_support": "pass",
+      "statement_support_reason": "The observation, prediction, execution, and replanning roles match the expected formulation.",
+      "locator_match": true,
+      "locator_reason": "Both identify RSS PDF page 3, Section II.C and Figure 3; the explanatory paragraph specifies the horizon roles.",
+      "scope_assessment": "The capture retains the method-level formulation and does not assert a universal horizon setting or guaranteed task success.",
+      "numeric_mappings": [],
+      "missing_expected_details": []
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "claim_id": "diffusion_policy2023_c2",
+      "statement_support": "pass",
+      "statement_support_reason": "The DDIM training/inference counts, hardware, and latency agree with the expected statement.",
+      "locator_match": true,
+      "locator_reason": "Both identify RSS PDF page 4, Section III.D.",
+      "scope_assessment": "The capture explicitly limits latency to the reported setup and distinguishes it from an end-to-end control rate. Its statement supplies real-world and denoising context for abbreviated number conditions.",
+      "numeric_mappings": [
+        {
+          "golden_index": 0,
+          "capture_name": "training_iterations",
+          "mapping_reason": "The capture statement identifies these as training denoising iterations in real-world DDIM experiments. Thus iterations refers to diffusion steps, not optimizer epochs, and matches the expected training configuration.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 1,
+          "capture_name": "inference_iterations",
+          "mapping_reason": "This separately named count is for DDIM inference, not training. The capture statement supplies the real-world denoising context, so its iterations unit and configuration agree.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 2,
+          "capture_name": "latency",
+          "mapping_reason": "The quantity is inference latency in seconds on an Nvidia 3080. Its number condition and full claim tie it to the reported DDIM setup; it is not a hardware-free timing promise.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        }
+      ],
+      "missing_expected_details": []
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "claim_id": "diffusion_policy2023_c3",
+      "statement_support": "pass",
+      "statement_support_reason": "The method rows, visual Transport/ph column, result order, and checkpoint aggregation agree.",
+      "locator_match": true,
+      "locator_reason": "Both identify RSS PDF page 6, Table II, Transport/ph; the capture also names the Table I caption and page 7 Section V.B used by the annotation.",
+      "scope_assessment": "Both describe simulated visual-observation success rates with proficient-human demonstrations. Best checkpoint is interpreted under the table caption and Section V.B as averaged best-performing checkpoint results, not one globally lucky episode.",
+      "numeric_mappings": [
+        {
+          "golden_index": 0,
+          "capture_name": "diffusion_best",
+          "mapping_reason": "The capture name and condition select DiffusionPolicy-C, visual Transport/ph, and the first checkpoint statistic. Success rate here is a fraction, equivalent to success-rate proportion, not a percentage-point improvement.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 1,
+          "capture_name": "diffusion_last",
+          "mapping_reason": "This selects the same method/task/data column but the last-ten-checkpoint statistic, not the best result. Capture statement and condition explicitly preserve that averaging window.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 2,
+          "capture_name": "baseline_best",
+          "mapping_reason": "The baseline is explicitly LSTM-GMM in the capture condition, with visual Transport/ph and best-checkpoint evaluation. Its success-rate unit denotes the same proportion as the expected fact.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 3,
+          "capture_name": "baseline_last",
+          "mapping_reason": "This identifies LSTM-GMM in the same visual Transport/ph setting and the last-ten-checkpoint statistic. It is not the multi-human or state-policy entry despite nearby table values.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        }
+      ],
+      "missing_expected_details": []
+    },
+    {
+      "paper_id": "sim2real2018",
+      "claim_id": "sim2real2018-c1",
+      "statement_support": "pass",
+      "statement_support_reason": "The LSTM simulation and physical-robot outcomes, displayed uncertainty, and trial conditions agree.",
+      "locator_match": true,
+      "locator_reason": "Both identify arXiv v3 PDF page 7, Table II and Figure 7 context; the capture includes the table caption that supplies the simulation trial count.",
+      "scope_assessment": "Both are confined to Fetch-arm puck pushing. Displayed uncertainty remains uninterpreted; trial counts are evaluations, not training seeds or independently reproduced experiments.",
+      "numeric_mappings": [
+        {
+          "golden_index": 0,
+          "capture_name": "sim_success",
+          "mapping_reason": "The name and condition select the LSTM simulation success column of Table II. Success rate is the same fractional success quantity as success_fraction, distinct from the real-robot column.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 1,
+          "capture_name": "sim_uncertainty",
+          "mapping_reason": "This is the displayed plus/minus amount for the LSTM simulation row, equivalent to reported_plus_minus. Neither label establishes a statistical definition such as SD, SEM, or a confidence interval.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 2,
+          "capture_name": "sim_trials",
+          "mapping_reason": "This counts simulation evaluation trials with randomized dynamics, matching the Table II caption. It is not the real trial count or a number of policies trained.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 3,
+          "capture_name": "real_success",
+          "mapping_reason": "This selects LSTM success on the real Fetch arm in Table II. Its fractional success-rate unit and physical-robot condition match the expected real-robot fact.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 4,
+          "capture_name": "real_uncertainty",
+          "mapping_reason": "This is the displayed plus/minus amount attached to LSTM real-robot success, not the simulation amount. Statistical meaning is intentionally left unspecified in both records.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 5,
+          "capture_name": "real_trials",
+          "mapping_reason": "This counts physical Fetch-arm evaluations of the LSTM policy in Table II. The trials unit and real-robot condition agree; it is not the simulation total.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        }
+      ],
+      "missing_expected_details": []
+    },
+    {
+      "paper_id": "sim2real2018",
+      "claim_id": "sim2real2018-c2",
+      "statement_support": "pass",
+      "statement_support_reason": "The reported ablation values support the expected lower-success comparison and preserve each condition.",
+      "locator_match": true,
+      "locator_reason": "Both identify arXiv v3 PDF page 7, Section V.B and the same Table III rows.",
+      "scope_assessment": "The capture remains within real-robot LSTM ablations and does not assert universal effects or independent replication. The repeated all-parameters result is not treated as a second independent experiment.",
+      "numeric_mappings": [
+        {
+          "golden_index": 0,
+          "capture_name": "all_success",
+          "mapping_reason": "The named result selects the Table III all-parameters condition on the real robot. Its success rate is a fraction, matching success_fraction; the repeated Table II value is not used as a substitute.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 1,
+          "capture_name": "all_uncertainty",
+          "mapping_reason": "This is the displayed plus/minus entry in the Table III all row, equivalent to reported_plus_minus. The row and quantity establish the mapping without assigning a confidence level.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 2,
+          "capture_name": "all_trials",
+          "mapping_reason": "This counts the real-robot LSTM trials in Table III's all row. It is not an additional independent sample beyond the similarly reported Table II result.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 3,
+          "capture_name": "fixed_success",
+          "mapping_reason": "The capture explicitly names fixed action timestep, selecting that Table III row. Fractional success rate matches success_fraction under this ablation, not the all-parameters baseline.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 4,
+          "capture_name": "fixed_uncertainty",
+          "mapping_reason": "The mapped amount is the plus/minus display for fixed action timestep in Table III. It matches the expected reported uncertainty quantity without an inferred statistical type.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 5,
+          "capture_name": "fixed_trials",
+          "mapping_reason": "The quantity counts real-robot trials for the fixed-action-timestep LSTM ablation. Its row-specific condition prevents matching against another ablation's trial count.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 6,
+          "capture_name": "no_noise_success",
+          "mapping_reason": "The condition explicitly selects no observation noise in Table III. Its success-rate fraction is the expected quantity for that ablation, not an inference about noise magnitude.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 7,
+          "capture_name": "no_noise_uncertainty",
+          "mapping_reason": "This is the plus/minus display for the no-observation-noise row, equivalent to reported_plus_minus. It is not a trial count or a formally identified confidence interval.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        },
+        {
+          "golden_index": 8,
+          "capture_name": "no_noise_trials",
+          "mapping_reason": "This counts trials of the real-robot LSTM policy trained without observation noise. The number is mapped by this condition and trials unit, not by numerical coincidence.",
+          "unit_assessment": "equivalent_in_context",
+          "condition_assessment": "matched_in_context"
+        }
+      ],
+      "missing_expected_details": []
+    },
+    {
+      "paper_id": "sim2real2018",
+      "claim_id": "sim2real2018-c3",
+      "statement_support": "pass",
+      "statement_support_reason": "The capture preserves episode-level sampling and the distinction between constant mass/damping and timestep-varying timing/noise.",
+      "locator_match": true,
+      "locator_reason": "Both identify arXiv v3 PDF page 4, Section IV.C.",
+      "scope_assessment": "The capture is limited to the described simulation training procedure. Its extra parameter count is verified separately and does not become an expected numeric fact.",
+      "numeric_mappings": [],
+      "missing_expected_details": []
+    }
+  ],
+  "extra_capture_numbers": [
+    {
+      "paper_id": "diffusion_policy2023",
+      "claim_id": "diffusion_policy2023_c3",
+      "capture_name": "checkpoints",
+      "value": 10,
+      "unit": "checkpoints",
+      "condition": "last-checkpoint average",
+      "source_verified": true,
+      "counts_as_expected_numeric": false,
+      "evidence_locator": {
+        "pdf_page": 6,
+        "section": "Table I caption, inherited by Table II",
+        "additional_pdf_page": 7,
+        "additional_section": "V.B. Evaluation Methodology"
+      },
+      "assessment": "The last-checkpoint average uses this many checkpoints. It is a window length, not the inference denoising count with the same numeric value."
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "claim_id": "diffusion_policy2023_c3",
+      "capture_name": "seeds",
+      "value": 3,
+      "unit": "seeds",
+      "condition": "per method",
+      "source_verified": true,
+      "counts_as_expected_numeric": false,
+      "evidence_locator": {
+        "pdf_page": 6,
+        "section": "Table I caption, inherited by Table II",
+        "additional_pdf_page": 7,
+        "additional_section": "V.B. Evaluation Methodology"
+      },
+      "assessment": "The reported aggregation uses training seeds. This is an evaluation-protocol quantity, not a number of physical robots or a claim of independent human replication."
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "claim_id": "diffusion_policy2023_c3",
+      "capture_name": "initializations",
+      "value": 50,
+      "unit": "initializations",
+      "condition": "per training seed",
+      "source_verified": true,
+      "counts_as_expected_numeric": false,
+      "evidence_locator": {
+        "pdf_page": 6,
+        "section": "Table I caption, inherited by Table II",
+        "additional_pdf_page": 7,
+        "additional_section": "V.B. Evaluation Methodology"
+      },
+      "assessment": "The caption's total and Section V.B's checkpoint-expanded total support the per-seed interpretation. The source does not specify whether initializations are reused or independently redrawn across seeds or checkpoints."
+    },
+    {
+      "paper_id": "sim2real2018",
+      "claim_id": "sim2real2018-c3",
+      "capture_name": "randomized_parameters",
+      "value": 95,
+      "unit": "parameters",
+      "condition": "described training setup",
+      "source_verified": true,
+      "counts_as_expected_numeric": false,
+      "evidence_locator": {
+        "pdf_page": 4,
+        "section": "IV.C. Dynamics Randomization"
+      },
+      "assessment": "The stated total follows the list of randomized quantities in this setup. It does not imply that all parameters are resampled at every timestep."
+    }
+  ],
+  "source_ambiguities": [
+    {
+      "paper_id": "sim2real2018",
+      "topic": "Displayed uncertainty",
+      "assessment": "The checked Table II/III captions and page 7 discussion do not identify the plus/minus quantity as SD, SEM, or a confidence interval. Agreement checks only the displayed amount and correct row/condition."
+    },
+    {
+      "paper_id": "sim2real2018",
+      "topic": "Repeated baseline",
+      "assessment": "The all row in Table III repeats the Table II LSTM real-robot result. Neither its repetition nor multiple Golden entries establishes independent replication or additional trials."
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "topic": "Evaluation aggregation",
+      "assessment": "The source supports training-seed, initialization, and checkpoint counts, but does not specify reuse or independent resampling of initializations across those axes. No independence claim is inferred."
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "topic": "PDF extraction",
+      "assessment": "pypdf emitted a numeric-format warning. The relevant table cells, headers, and captions were also inspected in the rendered page; the warning is retained as a source-processing limitation."
+    },
+    {
+      "paper_id": "sac2018",
+      "topic": "Expected detail outside numeric_facts",
+      "assessment": "The alpha-to-zero limiting case occurs in the expected statement but not its numeric_facts list. Consequently full numeric agreement coexists with a partial statement match."
+    }
+  ],
+  "summary": {
+    "papers": 3,
+    "claims": 9,
+    "statement_support_counts": {
+      "pass": 8,
+      "partial": 1,
+      "fail": 0
+    },
+    "locator_matches": 9,
+    "locator_total": 9,
+    "expected_numeric_matched": 26,
+    "expected_numeric_total": 26,
+    "capture_numeric_total": 30,
+    "extra_capture_numeric_total": 4,
+    "extra_capture_numeric_source_verified": 4,
+    "missing_expected_details": 1,
+    "retrieval_evaluation": "Not performed; no retrieval precision, recall, false-positive, or false-negative claims are made."
+  }
+}

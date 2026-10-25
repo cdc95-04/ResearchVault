@@ -1,0 +1,82 @@
+{
+  "review_kind": "agent_review",
+  "reviewer": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "ultra",
+    "independent_context": true,
+    "prior_verdict_seen": false,
+    "generation_reasoning_seen": false
+  },
+  "human_review_status": "pending",
+  "rubric_digest": "18f29fde6e1e7e40111c54baae071d1dbcefe96ec19fb557e4e76aef0a068908",
+  "independence_statement": "本轮未见该修订的生成推理、原Gold预期、annotation/comparison或既有修订判定；仅据指定PDF段落、rubric和消息中的候选审查。此为agent review，不是human approval。",
+  "reviews": [
+    {
+      "case_id": "sac2018-c01-revision",
+      "claim": "The maximum entropy objective adds policy entropy to expected reward; temperature alpha controls their relative weight and therefore policy stochasticity. The conventional expected-reward objective is recovered as alpha approaches zero.",
+      "source_evidence": "Eq.1在期望奖励中加入α加权的策略熵。紧随段落说明α决定熵相对奖励的权重及最优策略随机性，并在α→0时恢复常规期望奖励目标。",
+      "missing_qualifier": "无实质性遗漏；将policy stochasticity精化为optimal-policy stochasticity更贴合原文。支持范围是该目标函数下的最优策略，不是任意当前策略的保证。",
+      "scope_mismatch": "未发现实质性错配；候选停留于最大熵目标和参数作用，未推广至机器人、任务或经验绩效保证。",
+      "condition_mismatch": "未发现；恢复常规目标所需的α→0极限已明确保留。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "目标、参数作用及极限均有直接依据。"
+        },
+        "SCOPE": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "处于所述目标函数框架；随机性指其诱导的最优策略。"
+        },
+        "CONDITION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "保留恢复常规目标的α→0条件。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "与常规期望奖励目标的形式关系准确。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "权重作用来自目标定义，未另立经验机制。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "参数作用与原文相符，未推断性能因果增益。"
+        },
+        "QUANTIFICATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "α的权重含义及趋零方向均正确。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "候选未断言失败、零效应或不确定结果。"
+        },
+        "LIMITATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "明确保留源提出的极限情形。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "区分最大熵与常规目标，等价仅置于趋零极限。"
+        }
+      },
+      "verdict": "PASS",
+      "reason": "三项所需内容均获锚定段落支持；未把有限α的最大熵目标等同于常规目标。optimal一词可提高措辞精度，不改变此处目标函数语境下的支持结论。",
+      "evidence_anchor": {
+        "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+        "pdf_page": 3,
+        "locator": "Section 3.2, Equation (1) and immediately following paragraph"
+      }
+    }
+  ]
+}

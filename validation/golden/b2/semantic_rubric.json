@@ -1,0 +1,30 @@
+{
+  "format": 1,
+  "rubric_id": "source-candidate-semantics-v1",
+  "question": "Does the source support the candidate statement at the claimed scope and condition?",
+  "statuses": ["PASS", "FAIL", "UNCERTAIN", "HUMAN_REVIEW_REQUIRED"],
+  "dimensions": {
+    "ENTAILMENT": "Are the claim and verification observation supported by the anchored source?",
+    "SCOPE": "Are robot, task, setting, population and generality within the source evidence?",
+    "CONDITION": "Do method, observation modality, dataset, experimental condition and protocol match?",
+    "COMPARATOR": "Are baseline, comparison direction and comparison conditions stated accurately?",
+    "MECHANISM": "Is a proposed explanation distinguished from an established mechanism?",
+    "CAUSALITY": "Does the asserted causal force exceed the study design or reported evidence?",
+    "QUANTIFICATION": "Are magnitude, unit, denominator, aggregation and uncertainty interpreted correctly?",
+    "NEGATIVE_RESULT": "Are failure, null or inconclusive findings preserved when relevant?",
+    "LIMITATION": "Are material source qualifications retained, including an explicitly requested limiting case?",
+    "CONCEPT_BOUNDARY": "Are related constructs distinguished rather than equated without evidence?"
+  },
+  "report_contract": {
+    "case_fields": ["case_id", "claim", "source_evidence", "missing_qualifier", "scope_mismatch", "condition_mismatch", "dimensions", "verdict", "evidence_anchor", "reason"],
+    "dimension_fields": ["status", "applicable", "reason"],
+    "nonapplicable": "Use PASS with applicable=false and explain that the candidate makes no assertion on that dimension. Do not interpret this as positive scientific evidence.",
+    "source_ambiguity": "Use UNCERTAIN or HUMAN_REVIEW_REQUIRED when the PDF cannot support a decision. Do not infer missing evidence.",
+    "golden_error": "Record GOLDEN_REVIEW_REQUIRED with original value and source evidence after unblinding; never edit the frozen value.",
+    "overall": "FAIL when a material dimension fails; otherwise preserve uncertainty/review requirements. Never return a numerical score.",
+    "human_review_status": "pending",
+    "review_kind": "agent_review"
+  },
+  "blind_review": "Reviewer receives source PDF identity/hash, relevant page, candidate and this rubric; no expected verdict, prior adjudication or generation reasoning.",
+  "boundary": "This rubric records semantic judgments. Deterministic validation checks its structure and source digests, not scientific correctness."
+}

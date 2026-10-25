@@ -1,0 +1,38 @@
+{
+  "case_id": "sac2018-c01-revision",
+  "original_capture_digest": "9d4d97a4cccc8ffbf2a1aecaeac78e370c0c2222b7d280fd4183caa7c5df8992",
+  "original_claim_id": "sac2018-c01",
+  "root_cause": {
+    "primary": "candidate_generation_or_capture_coverage_omission",
+    "evidence": [
+      "The identified publisher PDF, one-based PDF page 3, Section 3.2, Equation 1 and its immediately following paragraph explicitly state both the temperature weighting and recovery of the conventional expected-reward objective as alpha approaches zero. The complete page was extracted with pypdf and visually inspected after Poppler rendering; PDF SHA-256 is b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5.",
+      "The neutral task in .qa/phase2/papers/sac2018.tasks.json asks what objective Section 3.2 introduces and what role its temperature plays. It supplies no answer and does not direct the agent to omit a limiting case; it also does not explicitly enumerate the limiting case as a required sub-answer.",
+      "The frozen capture's sac2018-c01 accurately includes reward plus entropy and temperature weighting but omits the alpha-to-zero limiting case. Its recorded provenance identifies an agent answer to a blind source-PDF question, not application-generated output.",
+      "skills/paper-note-writer/SKILL.md already requires analysis of source-supported claims, methods and limits, a real locator for important conclusions, and disclosure of unread material. references/evidence.md and references/reading.md already require claim-level source trails and bounded inferences. These contracts support the necessary source-context check without a SAC-specific rule.",
+      "The independent annotation contains the limiting case and the frozen comparison records partial statement coverage; this review confirms the missing content directly in the PDF rather than treating the annotation or comparison as source authority."
+    ],
+    "excluded_causes": [
+      "Absence of the limiting case from the identified source PDF or the reproduced present-day pypdf extraction is excluded: both preserve it immediately after Equation 1.",
+      "An instruction in the inspected neutral task or Skill requiring omission is excluded: no such instruction is present. A prompt-strength contribution cannot be excluded merely because the instructions are adequate in general.",
+      "A contradiction in the retained reward/entropy/temperature description is excluded by the source check. The observed defect is coverage of an explicit limiting case, not falsity of the retained clause.",
+      "An established ResearchVault application-generation bug is excluded as a supported attribution for this artifact: the frozen capture records agent-produced, non-application provenance, and no application execution trace establishes such a cause. This is not a claim that all possible software defects have been ruled out."
+    ],
+    "uncertainties": [
+      "The original generation trace, exact historical extraction supplied to the agent, and pre-serialization draft are unavailable in the inspected evidence. A historical extraction-window omission, generation-time selection, or serialization-time loss cannot be individually established or conclusively excluded.",
+      "The available record shows the omission in the persisted candidate capture. It does not prove whether the agent failed to understand the limiting case, understood it but summarized it away, or lost it at a later capture step.",
+      "The neutral task does not explicitly request the limiting case. Its omission is a source-grounded coverage gap relative to the expected claim and this revision task; it does not demonstrate that the original answer's remaining content was scientifically incorrect.",
+      "This proposed revision is an agent review after viewing the frozen annotation and comparison. It is not a new blind evaluation or a human-approved replacement."
+    ]
+  },
+  "revised_statement": "The maximum entropy objective adds policy entropy to expected reward; temperature alpha controls their relative weight and therefore policy stochasticity. The conventional expected-reward objective is recovered as alpha approaches zero.",
+  "numbers_unchanged": true,
+  "review_kind": "agent_review",
+  "human_review_status": "pending",
+  "evidence_anchor": {
+    "pdf_path": ".qa/phase2/papers/sac2018.pdf",
+    "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+    "pdf_page": 3,
+    "locator": "Section 3.2, Equation 1 and the complete immediately following paragraph",
+    "source_version": "PMLR volume 80, ICML 2018, publisher main PDF"
+  }
+}

@@ -1,0 +1,15 @@
+schema_version: 2
+vault_root: null
+runtime_dir: null
+synthetic: false
+read_only: false
+zotero:
+  library_id: null
+  api_key_env: RESEARCHVAULT_ZOTERO_KEY
+acquisition:
+  enabled: false
+  max_bytes: 104857600
+  interval: 1.0
+discovery:
+  enabled: true
+  limit: 10

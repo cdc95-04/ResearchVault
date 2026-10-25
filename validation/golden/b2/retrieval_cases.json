@@ -1,0 +1,123 @@
+{
+  "format": 1,
+  "cases": [
+    {
+      "case_id": "diffusion_policy2023_q1",
+      "request_id": "request-1",
+      "query": "DDIM training inference iterations Nvidia 3080 latency",
+      "kind": "exact_terms",
+      "expected_claim_ids": [
+        "diffusion_policy2023_c2"
+      ],
+      "expected_relevant_papers": [
+        "diffusion_policy2023"
+      ],
+      "acceptable_relevant_papers": [],
+      "known_distractors": [
+        "sac2018",
+        "sim2real2018"
+      ],
+      "minimum_evidence_requirement": "Distinguish training denoising iterations from inference iterations, supply hardware-specific latency and units; do not infer an end-to-end control rate.",
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "diffusion_policy2023_q2",
+      "request_id": "request-2",
+      "query": "How can the robot plan a future movement sequence while staying responsive to new observations?",
+      "kind": "semantic_paraphrase",
+      "expected_claim_ids": [
+        "diffusion_policy2023_c1"
+      ],
+      "expected_relevant_papers": [
+        "diffusion_policy2023"
+      ],
+      "acceptable_relevant_papers": [],
+      "known_distractors": [
+        "sac2018",
+        "sim2real2018"
+      ],
+      "minimum_evidence_requirement": "Describe observation-conditioned sequence prediction, partial execution and replanning; distinguish prediction and action horizons.",
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sac2018-q01",
+      "request_id": "request-3",
+      "query": "temperature parameter",
+      "kind": "exact_term",
+      "expected_claim_ids": [
+        "sac2018-c01"
+      ],
+      "expected_relevant_papers": [
+        "sac2018"
+      ],
+      "acceptable_relevant_papers": [],
+      "known_distractors": [
+        "diffusion_policy2023",
+        "sim2real2018"
+      ],
+      "minimum_evidence_requirement": "Identify temperature alpha in an entropy-augmented objective and its weighting role; distinguish physical or unrelated sampling temperature.",
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sac2018-q02",
+      "request_id": "request-4",
+      "query": "How often was performance checked, and how were repeated benchmark runs aggregated?",
+      "kind": "semantic_paraphrase",
+      "expected_claim_ids": [
+        "sac2018-c03"
+      ],
+      "expected_relevant_papers": [
+        "sac2018"
+      ],
+      "acceptable_relevant_papers": [
+        "diffusion_policy2023"
+      ],
+      "known_distractors": [
+        "sim2real2018"
+      ],
+      "minimum_evidence_requirement": "Give an explicit performance evaluation cadence with units and explain aggregation across repeated runs, preserving population and statistic. Multiple source protocols can answer the unspecified question.",
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sim2real2018-q1",
+      "request_id": "request-5",
+      "query": "fixed action timestep",
+      "kind": "exact_term",
+      "expected_claim_ids": [
+        "sim2real2018-c2"
+      ],
+      "expected_relevant_papers": [
+        "sim2real2018"
+      ],
+      "acceptable_relevant_papers": [],
+      "known_distractors": [
+        "diffusion_policy2023",
+        "sac2018"
+      ],
+      "minimum_evidence_requirement": "Identify the non-randomized constant action timestep as a comparison condition; distinguish it from randomized timing and simulator integration.",
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sim2real2018-q2",
+      "request_id": "request-6",
+      "query": "Which simulated properties stay unchanged during one rollout, and which disturbances are redrawn while the controller runs?",
+      "kind": "semantic_paraphrase",
+      "expected_claim_ids": [
+        "sim2real2018-c3"
+      ],
+      "expected_relevant_papers": [
+        "sim2real2018"
+      ],
+      "acceptable_relevant_papers": [],
+      "known_distractors": [
+        "diffusion_policy2023",
+        "sac2018"
+      ],
+      "minimum_evidence_requirement": "Distinguish episode-constant sampled dynamics parameters from runtime redrawn perturbations with explicit temporal sampling conditions.",
+      "human_review_status": "pending"
+    }
+  ],
+  "expected_policy": "Original six queries and targets unchanged. Relevance criteria recorded before execution; acceptable alternative source protocols may pass only with inspected evidence.",
+  "plan_is_blind": true,
+  "human_review_status": "pending"
+}

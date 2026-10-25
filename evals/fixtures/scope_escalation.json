@@ -1,0 +1,24 @@
+{
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "source_id": "synthetic:scope_escalation",
+  "description": "Simulation evidence is deliberately promoted to hardware transfer.",
+  "segments": {
+    "synthetic-page-1": "Only a simulated toy joint was evaluated."
+  },
+  "facts": {
+    "setting": "simulation"
+  },
+  "allowed_scope": [
+    "simulation",
+    "one-toy-setting"
+  ],
+  "expected_status": "note_supported",
+  "expected_assessment": {
+    "setting": "simulation"
+  }
+}

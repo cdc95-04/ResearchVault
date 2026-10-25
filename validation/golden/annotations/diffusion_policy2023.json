@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "paper_id": "diffusion_policy2023",
+  "role": "B",
+  "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+  "identifiers": {
+    "arxiv": "2303.04137",
+    "doi": "10.15607/RSS.2023.XIX.026"
+  },
+  "source_version": "RSS 2023 proceedings version, downloaded from the publisher; the arXiv identifier denotes the related work and does not select the current arXiv PDF.",
+  "publisher_url": "https://www.roboticsproceedings.org/rss19/p026.html",
+  "conference_url": "https://roboticsconference.org/2023/program/papers/026/",
+  "pdf_url": "https://www.roboticsproceedings.org/rss19/p026.pdf",
+  "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+  "pdf_pages": 16,
+  "authors": [
+    "Cheng Chi",
+    "Siyuan Feng",
+    "Yilun Du",
+    "Zhenjia Xu",
+    "Eric Cousineau",
+    "Benjamin CM Burchfiel",
+    "Shuran Song"
+  ],
+  "authors_source": "Publisher BibTeX and RSS conference metadata, retaining their order and spelling.",
+  "year": 2023,
+  "claims": [
+    {
+      "id": "diffusion_policy2023_c1",
+      "statement": "Receding horizon control uses the latest T_o observations to predict T_p actions, executes T_a actions without replanning, then updates the plan.",
+      "evidence_locator": {
+        "pdf_page": 3,
+        "section": "II.C. Diffusion for Visuomotor Policy Learning; Closed-loop action-sequence prediction",
+        "table_or_figure": "Figure 3(a)"
+      },
+      "numeric_facts": [],
+      "scope": "T_o is the observation horizon, T_p the prediction horizon, and T_a the execution horizon in the method formulation.",
+      "unsupported_extension": "This passage does not fix one horizon configuration for every task."
+    },
+    {
+      "id": "diffusion_policy2023_c2",
+      "statement": "The reported real-world DDIM configuration uses 100 training denoising iterations and 10 inference iterations, with 0.1-second inference latency on an Nvidia 3080 GPU.",
+      "evidence_locator": {
+        "pdf_page": 4,
+        "section": "III.D. Accelerating Inference for Real-time Control",
+        "table_or_figure": null
+      },
+      "numeric_facts": [
+        {
+          "value": 100,
+          "unit": "denoising iterations",
+          "condition": "DDIM training configuration in the reported real-world experiments"
+        },
+        {
+          "value": 10,
+          "unit": "denoising iterations",
+          "condition": "DDIM inference configuration in the reported real-world experiments"
+        },
+        {
+          "value": 0.1,
+          "unit": "seconds",
+          "condition": "Inference latency on an Nvidia 3080 GPU with the reported DDIM configuration"
+        }
+      ],
+      "scope": "The iteration counts concern diffusion, not optimizer epochs.",
+      "unsupported_extension": "The timing is not a hardware-independent latency guarantee."
+    },
+    {
+      "id": "diffusion_policy2023_c3",
+      "statement": "For visual Transport with proficient-human demonstrations, Table II reports DiffusionPolicy-C at 1.00/0.93 and LSTM-GMM at 0.88/0.62; each pair is maximum-checkpoint performance followed by the last-ten-checkpoint average.",
+      "evidence_locator": {
+        "pdf_page": 6,
+        "section": "V. Evaluation; simulation benchmark results",
+        "table_or_figure": "Table II, Transport/ph column; Table I caption defines the shared reporting format"
+      },
+      "additional_evidence_locators": [
+        {
+          "pdf_page": 7,
+          "section": "V.B. Evaluation Methodology",
+          "table_or_figure": null
+        }
+      ],
+      "numeric_facts": [
+        {
+          "value": 1.0,
+          "unit": "success-rate proportion",
+          "condition": "DiffusionPolicy-C; visual Transport; proficient-human demonstrations; maximum-checkpoint performance"
+        },
+        {
+          "value": 0.93,
+          "unit": "success-rate proportion",
+          "condition": "DiffusionPolicy-C; visual Transport; proficient-human demonstrations; average of last 10 checkpoints"
+        },
+        {
+          "value": 0.88,
+          "unit": "success-rate proportion",
+          "condition": "LSTM-GMM; visual Transport; proficient-human demonstrations; maximum-checkpoint performance"
+        },
+        {
+          "value": 0.62,
+          "unit": "success-rate proportion",
+          "condition": "LSTM-GMM; visual Transport; proficient-human demonstrations; average of last 10 checkpoints"
+        }
+      ],
+      "scope": "Simulation success rates; checkpoint performance is averaged across 3 training seeds and 50 environment initializations. The second number also averages the last 10 checkpoints.",
+      "unsupported_extension": "These are not physical-robot, multi-human, or state-observation Transport results."
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "id": "diffusion_policy2023_q1",
+      "query": "DDIM training inference iterations Nvidia 3080 latency",
+      "expected_claim_ids": ["diffusion_policy2023_c2"],
+      "kind": "exact_terms"
+    },
+    {
+      "id": "diffusion_policy2023_q2",
+      "query": "How can the robot plan a future movement sequence while staying responsive to new observations?",
+      "expected_claim_ids": ["diffusion_policy2023_c1"],
+      "kind": "semantic_paraphrase"
+    }
+  ],
+  "identity_cautions": [
+    "This Golden record uses the seven-author RSS proceedings version. Current arXiv:2303.04137v5 is dated 14 March 2024, identifies itself as an extended journal version, includes Russ Tedrake, and changes author order. Do not substitute its author list, pagination, or content for this PDF.",
+    "RSS metadata spells one author Benjamin CM Burchfiel; the RSS PDF title page uses Benjamin Burchfiel. This is a name-form difference within the selected version, not evidence of an additional author.",
+    "The publisher DOI identifies the RSS publication. The unversioned arXiv identifier is a related-work identifier, not a claim that the current arXiv version is byte-identical to the selected publisher PDF."
+  ],
+  "review": {
+    "status": "agent_independent_pending_human",
+    "human_reviewed": false,
+    "implementation_outputs_seen": false,
+    "source_accessed_on": "2026-09-28",
+    "source_basis": "Publisher metadata and the publisher PDF only; current arXiv metadata used solely to document the version mismatch.",
+    "pdf_text_extraction": "pypdf; selected evidence pages inspected without saving full text",
+    "pdf_visual_review_pages": [3, 6],
+    "query_predefinition": "Queries and expected claim IDs were fixed independently before seeing source code, tests, retrieval results, or capture outputs.",
+    "review_note": "Independent agent annotation only; human acceptance remains pending."
+  }
+}

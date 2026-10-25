@@ -1,0 +1,647 @@
+{
+  "review_kind": "agent_review",
+  "reviewer": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "ultra",
+    "independent_context": true,
+    "prior_verdict_seen": false,
+    "generation_reasoning_seen": false
+  },
+  "human_review_status": "pending",
+  "rubric_digest": "18f29fde6e1e7e40111c54baae071d1dbcefe96ec19fb557e4e76aef0a068908",
+  "blind_packet_digest": "e78cf6859b4b221abb428b7526aae8766b2d660fc7e637eca8975ce9dcc97bc2",
+  "blind_map": {
+    "blind-1": "sac2018--wrong_numeric_observation",
+    "blind-2": "sac2018--overbroad_scope",
+    "blind-3": "sac2018--wrong_table_condition",
+    "blind-4": "diffusion_policy2023--wrong_numeric_observation",
+    "blind-5": "diffusion_policy2023--overbroad_scope",
+    "blind-6": "diffusion_policy2023--wrong_table_condition",
+    "blind-7": "sim2real2018--wrong_numeric_observation",
+    "blind-8": "sim2real2018--overbroad_scope",
+    "blind-9": "sim2real2018--wrong_table_condition"
+  },
+  "captures_digest": "40906e4fc59e1600abe60bbc38f485b3ee6e75fae6a4c2fafeb4556d2a3801bb",
+  "cases_digest": "9df31a45746858140394621ea05ee6b5f382d2265d3b898025d0143d984be9c5",
+  "results": [
+    {
+      "case_id": "sac2018--wrong_numeric_observation",
+      "claim": "statement: The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials.\nscope: The reported benchmark protocol, not confidence intervals or independent hardware replications.\nobservation: The reported success rate is 98765 percent.",
+      "source_evidence": "第6–7页为Gym/rllab基准。每算法5个种子，每1000环境步评估一次；均线与阴影分别为回报均值及极值。",
+      "missing_qualifier": "无限定词能补救；须删除或替换无源成功率。",
+      "scope_mismatch": "无额外范围扩张。",
+      "condition_mismatch": "正文实验条件吻合；新增成功率无据。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "观察中的成功率无来源。"
+        },
+        "SCOPE": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "所述范围保留源边界。"
+        },
+        "CONDITION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "种子及评估流程吻合。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言具体基线差异。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未作机制解释断言。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "98765%无据且越界。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "候选保留相关适用边界。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "回报被另称成功率。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文协议成立；锚定指标为回报，observation捏造成功率且数值越界。",
+      "evidence_anchor": {
+        "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+        "pdf_page": 7,
+        "locator": "Section 5.1, Figure 1 protocol"
+      },
+      "blind_case_id": "blind-1"
+    },
+    {
+      "case_id": "sac2018--overbroad_scope",
+      "claim": "statement: The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials.\nscope: Proves universal success on every robot and task.\nobservation: The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials.",
+      "source_evidence": "第6–7页为Gym/rllab基准。每算法5个种子，每1000环境步评估一次；均线与阴影分别为回报均值及极值。",
+      "missing_qualifier": "限所测Gym/rllab任务与训练种子。",
+      "scope_mismatch": "scope宣称每个机器人及任务均成功；源不支持。",
+      "condition_mismatch": "正文条件吻合；其适用范围被scope擅自扩大。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "正文及重复观察获支持。"
+        },
+        "SCOPE": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "有限设置扩至所有机器人任务。"
+        },
+        "CONDITION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "种子及评估流程吻合。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言具体基线差异。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未作机制解释断言。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "5次试验及极值解释正确。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "普遍保证移除适用边界。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "有限实证不构成普遍证明。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文与重复观察获支持；scope却宣称普遍成功，超出有限实验或设置证据。",
+      "evidence_anchor": {
+        "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+        "pdf_page": 7,
+        "locator": "Section 5.1, Figure 1 protocol"
+      },
+      "blind_case_id": "blind-2"
+    },
+    {
+      "case_id": "sac2018--wrong_table_condition",
+      "claim": "statement: The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials.\nscope: The reported benchmark protocol, not confidence intervals or independent hardware replications.\nobservation: These measurements are from every physical robot with unseen tasks.",
+      "source_evidence": "第6–7页为Gym/rllab基准。每算法5个种子，每1000环境步评估一次；均线与阴影分别为回报均值及极值。",
+      "missing_qualifier": "限所测Gym/rllab任务与训练种子。",
+      "scope_mismatch": "observation覆盖全部实机和未见任务，超出源总体。",
+      "condition_mismatch": "锚定仿真协议/结果/设置被误记为实机测量。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "实机及未见任务观察无据。"
+        },
+        "SCOPE": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "扩至所有实机与未见任务。"
+        },
+        "CONDITION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "把仿真记录改称实机测量。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言具体基线差异。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未作机制解释断言。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "5次试验及极值解释正确。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "观察否定已有范围限定。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "仿真与实机证据混同。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文成立且scope有限定；observation与之冲突，把局部仿真证据说成全部实机的未见任务结果。",
+      "evidence_anchor": {
+        "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+        "pdf_page": 7,
+        "locator": "Section 5.1, Figure 1 protocol"
+      },
+      "blind_case_id": "blind-3"
+    },
+    {
+      "case_id": "diffusion_policy2023--wrong_numeric_observation",
+      "claim": "statement: In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations.\nscope: Simulation, visual observations, proficient-human demonstrations, success rates. These are not state-policy, multi-human, or physical-robot results.\nobservation: The reported success rate is 98765 percent.",
+      "source_evidence": "第6页视觉Transport PH列：C为1.00/0.93，LSTM-GMM为0.88/0.62；表注及第7页说明最佳/末10检查点、3种子×50初始化，属仿真。",
+      "missing_qualifier": "无限定词能补救；须删除或替换无源成功率。",
+      "scope_mismatch": "无额外范围扩张。",
+      "condition_mismatch": "正文实验条件吻合；新增成功率无据。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "观察中的成功率无来源。"
+        },
+        "SCOPE": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "所述范围保留源边界。"
+        },
+        "CONDITION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "视觉、PH及检查点吻合。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "同一表列的基线数值准确。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未作机制解释断言。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "98765%无据且越界。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "候选保留相关适用边界。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "相关概念保持区分。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文主张成立，但observation捏造成功率；整条候选不受支持。",
+      "evidence_anchor": {
+        "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+        "pdf_page": 6,
+        "locator": "Table II Transport ph; Table I caption and Section V.B on page 7"
+      },
+      "blind_case_id": "blind-4"
+    },
+    {
+      "case_id": "diffusion_policy2023--overbroad_scope",
+      "claim": "statement: In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations.\nscope: Proves universal success on every robot and task.\nobservation: In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations.",
+      "source_evidence": "第6页视觉Transport PH列：C为1.00/0.93，LSTM-GMM为0.88/0.62；表注及第7页说明最佳/末10检查点、3种子×50初始化，属仿真。",
+      "missing_qualifier": "限仿真视觉Transport、PH示范及所报评估。",
+      "scope_mismatch": "scope宣称每个机器人及任务均成功；源不支持。",
+      "condition_mismatch": "正文条件吻合；其适用范围被scope擅自扩大。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "正文及重复观察获支持。"
+        },
+        "SCOPE": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "有限设置扩至所有机器人任务。"
+        },
+        "CONDITION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "视觉、PH及检查点吻合。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "同一表列的基线数值准确。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未作机制解释断言。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "表值及聚合解释正确。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "普遍保证移除适用边界。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "有限实证不构成普遍证明。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文与重复观察获支持；scope却宣称普遍成功，超出有限实验或设置证据。",
+      "evidence_anchor": {
+        "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+        "pdf_page": 6,
+        "locator": "Table II Transport ph; Table I caption and Section V.B on page 7"
+      },
+      "blind_case_id": "blind-5"
+    },
+    {
+      "case_id": "diffusion_policy2023--wrong_table_condition",
+      "claim": "statement: In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations.\nscope: Simulation, visual observations, proficient-human demonstrations, success rates. These are not state-policy, multi-human, or physical-robot results.\nobservation: These measurements are from every physical robot with unseen tasks.",
+      "source_evidence": "第6页视觉Transport PH列：C为1.00/0.93，LSTM-GMM为0.88/0.62；表注及第7页说明最佳/末10检查点、3种子×50初始化，属仿真。",
+      "missing_qualifier": "限仿真视觉Transport、PH示范及所报评估。",
+      "scope_mismatch": "observation覆盖全部实机和未见任务，超出源总体。",
+      "condition_mismatch": "锚定仿真协议/结果/设置被误记为实机测量。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "实机及未见任务观察无据。"
+        },
+        "SCOPE": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "扩至所有实机与未见任务。"
+        },
+        "CONDITION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "把仿真记录改称实机测量。"
+        },
+        "COMPARATOR": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "仿真比较被归为实机比较。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未作机制解释断言。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "表值及聚合解释正确。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "观察否定已有范围限定。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "仿真与实机证据混同。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文成立且scope有限定；observation与之冲突，把局部仿真证据说成全部实机的未见任务结果。",
+      "evidence_anchor": {
+        "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+        "pdf_page": 6,
+        "locator": "Table II Transport ph; Table I caption and Section V.B on page 7"
+      },
+      "blind_case_id": "blind-6"
+    },
+    {
+      "case_id": "sim2real2018--wrong_numeric_observation",
+      "claim": "statement: Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters.\nscope: The described simulation training setup; it does not mean every parameter is resampled at every timestep.\nobservation: The reported success rate is 98765 percent.",
+      "source_evidence": "第4页描述95项仿真随机化；质量/阻尼每回合固定，步长/观测噪声逐步变化。第5–6页澄清步长分布参数λ回合内固定。",
+      "missing_qualifier": "无限定词能补救；须删除或替换无源成功率。",
+      "scope_mismatch": "无额外范围扩张。",
+      "condition_mismatch": "正文实验条件吻合；新增成功率无据。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "观察中的成功率无来源。"
+        },
+        "SCOPE": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "所述范围保留源边界。"
+        },
+        "CONDITION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "两种随机化时间尺度吻合。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言具体基线差异。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "仅准确陈述随机化规则。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "98765%无据且越界。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "候选保留相关适用边界。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "训练设置被加上绩效结论。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文主张成立，但observation捏造成功率；整条候选不受支持。",
+      "evidence_anchor": {
+        "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+        "pdf_page": 4,
+        "locator": "Section IV.C"
+      },
+      "blind_case_id": "blind-7"
+    },
+    {
+      "case_id": "sim2real2018--overbroad_scope",
+      "claim": "statement: Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters.\nscope: Proves universal success on every robot and task.\nobservation: Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters.",
+      "source_evidence": "第4页描述95项仿真随机化；质量/阻尼每回合固定，步长/观测噪声逐步变化。第5–6页澄清步长分布参数λ回合内固定。",
+      "missing_qualifier": "限Fetch推盘任务的仿真训练设置。",
+      "scope_mismatch": "scope宣称每个机器人及任务均成功；源不支持。",
+      "condition_mismatch": "正文条件吻合；其适用范围被scope擅自扩大。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "正文及重复观察获支持。"
+        },
+        "SCOPE": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "有限设置扩至所有机器人任务。"
+        },
+        "CONDITION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "两种随机化时间尺度吻合。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言具体基线差异。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "仅准确陈述随机化规则。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "95项及时间尺度正确。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "普遍保证移除适用边界。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "有限实证不构成普遍证明。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文与重复观察获支持；scope却宣称普遍成功，超出有限实验或设置证据。",
+      "evidence_anchor": {
+        "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+        "pdf_page": 4,
+        "locator": "Section IV.C"
+      },
+      "blind_case_id": "blind-8"
+    },
+    {
+      "case_id": "sim2real2018--wrong_table_condition",
+      "claim": "statement: Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters.\nscope: The described simulation training setup; it does not mean every parameter is resampled at every timestep.\nobservation: These measurements are from every physical robot with unseen tasks.",
+      "source_evidence": "第4页描述95项仿真随机化；质量/阻尼每回合固定，步长/观测噪声逐步变化。第5–6页澄清步长分布参数λ回合内固定。",
+      "missing_qualifier": "限Fetch推盘任务的仿真训练设置。",
+      "scope_mismatch": "observation覆盖全部实机和未见任务，超出源总体。",
+      "condition_mismatch": "锚定仿真协议/结果/设置被误记为实机测量。",
+      "dimensions": {
+        "ENTAILMENT": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "实机及未见任务观察无据。"
+        },
+        "SCOPE": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "扩至所有实机与未见任务。"
+        },
+        "CONDITION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "把仿真记录改称实机测量。"
+        },
+        "COMPARATOR": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言具体基线差异。"
+        },
+        "MECHANISM": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "仅准确陈述随机化规则。"
+        },
+        "CAUSALITY": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未提出因果归因。"
+        },
+        "QUANTIFICATION": {
+          "status": "PASS",
+          "applicable": true,
+          "reason": "95项及时间尺度正确。"
+        },
+        "NEGATIVE_RESULT": {
+          "status": "PASS",
+          "applicable": false,
+          "reason": "未断言失败或零效应。"
+        },
+        "LIMITATION": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "观察否定已有范围限定。"
+        },
+        "CONCEPT_BOUNDARY": {
+          "status": "FAIL",
+          "applicable": true,
+          "reason": "仿真与实机证据混同。"
+        }
+      },
+      "verdict": "FAIL",
+      "reason": "正文成立且scope有限定；observation与之冲突，把局部仿真证据说成全部实机的未见任务结果。",
+      "evidence_anchor": {
+        "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+        "pdf_page": 4,
+        "locator": "Section IV.C"
+      },
+      "blind_case_id": "blind-9"
+    }
+  ],
+  "golden_review_required": [],
+  "ownership_counts": {
+    "STRUCTURAL_VALIDATOR": 0,
+    "SEMANTIC_EVAL": 9,
+    "HUMAN_REVIEW": 0
+  },
+  "human_approval_pending": 9
+}

@@ -1,0 +1,917 @@
+{
+  "format": 1,
+  "plans_digest": "e44d6cad9530313461a602dcc072fdd46bc9e53b8dd8eead337c4894ecd1d7d6",
+  "cases_digest": "27797769536254fb8ac22639a29260d50bba66150cb5fa05cf2e3480798821d0",
+  "corpus": "three frozen captures as Notes and three hashed Fulltexts; no Knowledge fixtures",
+  "baseline_valid": true,
+  "read_only_unchanged": true,
+  "real_zotero_writes": 0,
+  "real_obsidian_mutations": 0,
+  "requests": [
+    {
+      "request_id": "request-1",
+      "raw": {
+        "query": "DDIM training inference iterations Nvidia 3080 latency",
+        "layers": [
+          "literature-note",
+          "knowledge"
+        ],
+        "returned_documents": [
+          {
+            "path": "02-papers/Other/GOLD0002.md",
+            "type": "literature-note",
+            "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+            "evidence_status": "pdf_verified",
+            "paper_id": "diffusion_policy2023",
+            "rank": 1,
+            "matched_terms": [
+              "ddim",
+              "training",
+              "inference",
+              "iterations",
+              "nvidia",
+              "3080",
+              "latency"
+            ],
+            "library_id": null,
+            "zotero_key": "GOLD0002",
+            "source_version": "RSS 2023 proceedings, seven-author conference version"
+          }
+        ],
+        "rank_semantics": "path traversal order; no semantic relevance score"
+      },
+      "skill_calls": [
+        {
+          "query": "DDIM training inference iterations Nvidia 3080 latency",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0002.md",
+              "type": "literature-note",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "pdf_verified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "ddim",
+                "training",
+                "inference",
+                "iterations",
+                "nvidia",
+                "3080",
+                "latency"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "DDIM",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0002.md",
+              "type": "literature-note",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "pdf_verified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "ddim"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "sampling steps",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0001.md",
+              "type": "literature-fulltext",
+              "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+              "evidence_status": "unverified",
+              "paper_id": "sac2018",
+              "rank": 1,
+              "matched_terms": [
+                "sampling",
+                "steps"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0001",
+              "source_version": "ICML 2018 PMLR volume 80 main paper"
+            },
+            {
+              "path": "03-fulltext/GOLD0002.md",
+              "type": "literature-fulltext",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "unverified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 2,
+              "matched_terms": [
+                "sampling",
+                "steps"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            },
+            {
+              "path": "03-fulltext/GOLD0003.md",
+              "type": "literature-fulltext",
+              "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+              "evidence_status": "unverified",
+              "paper_id": "sim2real2018",
+              "rank": 3,
+              "matched_terms": [
+                "sampling",
+                "steps"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0003",
+              "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "3080",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0002.md",
+              "type": "literature-note",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "pdf_verified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "3080"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        }
+      ],
+      "skill_candidates": [
+        {
+          "paper_id": "diffusion_policy2023",
+          "library_id": null,
+          "zotero_key": "GOLD0002",
+          "source_version": "RSS 2023 proceedings, seven-author conference version",
+          "paths": [
+            "02-papers/Other/GOLD0002.md",
+            "03-fulltext/GOLD0002.md"
+          ]
+        },
+        {
+          "paper_id": "sac2018",
+          "library_id": null,
+          "zotero_key": "GOLD0001",
+          "source_version": "ICML 2018 PMLR volume 80 main paper",
+          "paths": [
+            "03-fulltext/GOLD0001.md"
+          ]
+        },
+        {
+          "paper_id": "sim2real2018",
+          "library_id": null,
+          "zotero_key": "GOLD0003",
+          "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018",
+          "paths": [
+            "03-fulltext/GOLD0003.md"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "request-2",
+      "raw": {
+        "query": "How can the robot plan a future movement sequence while staying responsive to new observations?",
+        "layers": [
+          "literature-note",
+          "knowledge",
+          "literature-fulltext"
+        ],
+        "returned_documents": [],
+        "rank_semantics": "path traversal order; no semantic relevance score"
+      },
+      "skill_calls": [
+        {
+          "query": "How can the robot plan a future movement sequence while staying responsive to new observations?",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "receding horizon",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0002.md",
+              "type": "literature-note",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "pdf_verified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "receding",
+                "horizon"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "action horizon",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0002.md",
+              "type": "literature-note",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "pdf_verified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "action",
+                "horizon"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "closed loop",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0002.md",
+              "type": "literature-fulltext",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "unverified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "closed",
+                "loop"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        }
+      ],
+      "skill_candidates": [
+        {
+          "paper_id": "diffusion_policy2023",
+          "library_id": null,
+          "zotero_key": "GOLD0002",
+          "source_version": "RSS 2023 proceedings, seven-author conference version",
+          "paths": [
+            "02-papers/Other/GOLD0002.md",
+            "03-fulltext/GOLD0002.md"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "request-3",
+      "raw": {
+        "query": "temperature parameter",
+        "layers": [
+          "literature-note",
+          "knowledge",
+          "literature-fulltext"
+        ],
+        "returned_documents": [
+          {
+            "path": "03-fulltext/GOLD0001.md",
+            "type": "literature-fulltext",
+            "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+            "evidence_status": "unverified",
+            "paper_id": "sac2018",
+            "rank": 1,
+            "matched_terms": [
+              "temperature",
+              "parameter"
+            ],
+            "library_id": null,
+            "zotero_key": "GOLD0001",
+            "source_version": "ICML 2018 PMLR volume 80 main paper"
+          }
+        ],
+        "rank_semantics": "path traversal order; no semantic relevance score"
+      },
+      "skill_calls": [
+        {
+          "query": "temperature parameter",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0001.md",
+              "type": "literature-fulltext",
+              "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+              "evidence_status": "unverified",
+              "paper_id": "sac2018",
+              "rank": 1,
+              "matched_terms": [
+                "temperature",
+                "parameter"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0001",
+              "source_version": "ICML 2018 PMLR volume 80 main paper"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "temperature",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0001.md",
+              "type": "literature-note",
+              "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+              "evidence_status": "pdf_verified",
+              "paper_id": "sac2018",
+              "rank": 1,
+              "matched_terms": [
+                "temperature"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0001",
+              "source_version": "ICML 2018 PMLR volume 80 main paper"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "sampling temperature",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0001.md",
+              "type": "literature-fulltext",
+              "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+              "evidence_status": "unverified",
+              "paper_id": "sac2018",
+              "rank": 1,
+              "matched_terms": [
+                "sampling",
+                "temperature"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0001",
+              "source_version": "ICML 2018 PMLR volume 80 main paper"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "softmax temperature",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        }
+      ],
+      "skill_candidates": [
+        {
+          "paper_id": "sac2018",
+          "library_id": null,
+          "zotero_key": "GOLD0001",
+          "source_version": "ICML 2018 PMLR volume 80 main paper",
+          "paths": [
+            "03-fulltext/GOLD0001.md",
+            "02-papers/Other/GOLD0001.md"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "request-4",
+      "raw": {
+        "query": "How often was performance checked, and how were repeated benchmark runs aggregated?",
+        "layers": [
+          "literature-note",
+          "knowledge",
+          "literature-fulltext"
+        ],
+        "returned_documents": [],
+        "rank_semantics": "path traversal order; no semantic relevance score"
+      },
+      "skill_calls": [
+        {
+          "query": "How often was performance checked, and how were repeated benchmark runs aggregated?",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "evaluation interval",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0001.md",
+              "type": "literature-note",
+              "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+              "evidence_status": "pdf_verified",
+              "paper_id": "sac2018",
+              "rank": 1,
+              "matched_terms": [
+                "evaluation",
+                "interval"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0001",
+              "source_version": "ICML 2018 PMLR volume 80 main paper"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "multiple seeds",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0001.md",
+              "type": "literature-fulltext",
+              "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+              "evidence_status": "unverified",
+              "paper_id": "sac2018",
+              "rank": 1,
+              "matched_terms": [
+                "multiple",
+                "seeds"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0001",
+              "source_version": "ICML 2018 PMLR volume 80 main paper"
+            },
+            {
+              "path": "03-fulltext/GOLD0002.md",
+              "type": "literature-fulltext",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "unverified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 2,
+              "matched_terms": [
+                "multiple",
+                "seeds"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            },
+            {
+              "path": "03-fulltext/GOLD0003.md",
+              "type": "literature-fulltext",
+              "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+              "evidence_status": "unverified",
+              "paper_id": "sim2real2018",
+              "rank": 3,
+              "matched_terms": [
+                "multiple",
+                "seeds"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0003",
+              "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "mean standard deviation",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0003.md",
+              "type": "literature-fulltext",
+              "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+              "evidence_status": "unverified",
+              "paper_id": "sim2real2018",
+              "rank": 1,
+              "matched_terms": [
+                "mean",
+                "standard",
+                "deviation"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0003",
+              "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        }
+      ],
+      "skill_candidates": [
+        {
+          "paper_id": "sac2018",
+          "library_id": null,
+          "zotero_key": "GOLD0001",
+          "source_version": "ICML 2018 PMLR volume 80 main paper",
+          "paths": [
+            "02-papers/Other/GOLD0001.md",
+            "03-fulltext/GOLD0001.md"
+          ]
+        },
+        {
+          "paper_id": "diffusion_policy2023",
+          "library_id": null,
+          "zotero_key": "GOLD0002",
+          "source_version": "RSS 2023 proceedings, seven-author conference version",
+          "paths": [
+            "03-fulltext/GOLD0002.md"
+          ]
+        },
+        {
+          "paper_id": "sim2real2018",
+          "library_id": null,
+          "zotero_key": "GOLD0003",
+          "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018",
+          "paths": [
+            "03-fulltext/GOLD0003.md"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "request-5",
+      "raw": {
+        "query": "fixed action timestep",
+        "layers": [
+          "literature-note",
+          "knowledge"
+        ],
+        "returned_documents": [
+          {
+            "path": "02-papers/Other/GOLD0003.md",
+            "type": "literature-note",
+            "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+            "evidence_status": "pdf_verified",
+            "paper_id": "sim2real2018",
+            "rank": 1,
+            "matched_terms": [
+              "fixed",
+              "action",
+              "timestep"
+            ],
+            "library_id": null,
+            "zotero_key": "GOLD0003",
+            "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+          }
+        ],
+        "rank_semantics": "path traversal order; no semantic relevance score"
+      },
+      "skill_calls": [
+        {
+          "query": "fixed action timestep",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0003.md",
+              "type": "literature-note",
+              "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+              "evidence_status": "pdf_verified",
+              "paper_id": "sim2real2018",
+              "rank": 1,
+              "matched_terms": [
+                "fixed",
+                "action",
+                "timestep"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0003",
+              "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "control timestep",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0003.md",
+              "type": "literature-note",
+              "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+              "evidence_status": "pdf_verified",
+              "paper_id": "sim2real2018",
+              "rank": 1,
+              "matched_terms": [
+                "control",
+                "timestep"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0003",
+              "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "control frequency",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0002.md",
+              "type": "literature-fulltext",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "unverified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "control",
+                "frequency"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "action repeat",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0001.md",
+              "type": "literature-fulltext",
+              "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+              "evidence_status": "unverified",
+              "paper_id": "sac2018",
+              "rank": 1,
+              "matched_terms": [
+                "action",
+                "repeat"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0001",
+              "source_version": "ICML 2018 PMLR volume 80 main paper"
+            },
+            {
+              "path": "03-fulltext/GOLD0002.md",
+              "type": "literature-fulltext",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "unverified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 2,
+              "matched_terms": [
+                "action",
+                "repeat"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        }
+      ],
+      "skill_candidates": [
+        {
+          "paper_id": "sim2real2018",
+          "library_id": null,
+          "zotero_key": "GOLD0003",
+          "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018",
+          "paths": [
+            "02-papers/Other/GOLD0003.md"
+          ]
+        },
+        {
+          "paper_id": "diffusion_policy2023",
+          "library_id": null,
+          "zotero_key": "GOLD0002",
+          "source_version": "RSS 2023 proceedings, seven-author conference version",
+          "paths": [
+            "03-fulltext/GOLD0002.md"
+          ]
+        },
+        {
+          "paper_id": "sac2018",
+          "library_id": null,
+          "zotero_key": "GOLD0001",
+          "source_version": "ICML 2018 PMLR volume 80 main paper",
+          "paths": [
+            "03-fulltext/GOLD0001.md"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "request-6",
+      "raw": {
+        "query": "Which simulated properties stay unchanged during one rollout, and which disturbances are redrawn while the controller runs?",
+        "layers": [
+          "literature-note",
+          "knowledge",
+          "literature-fulltext"
+        ],
+        "returned_documents": [],
+        "rank_semantics": "path traversal order; no semantic relevance score"
+      },
+      "skill_calls": [
+        {
+          "query": "Which simulated properties stay unchanged during one rollout, and which disturbances are redrawn while the controller runs?",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "domain randomization",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0003.md",
+              "type": "literature-fulltext",
+              "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+              "evidence_status": "unverified",
+              "paper_id": "sim2real2018",
+              "rank": 1,
+              "matched_terms": [
+                "domain",
+                "randomization"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0003",
+              "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "external perturbations",
+          "layers": [
+            "literature-note",
+            "knowledge",
+            "literature-fulltext"
+          ],
+          "returned_documents": [
+            {
+              "path": "03-fulltext/GOLD0002.md",
+              "type": "literature-fulltext",
+              "title": "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+              "evidence_status": "unverified",
+              "paper_id": "diffusion_policy2023",
+              "rank": 1,
+              "matched_terms": [
+                "external",
+                "perturbations"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0002",
+              "source_version": "RSS 2023 proceedings, seven-author conference version"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        },
+        {
+          "query": "observation noise",
+          "layers": [
+            "literature-note",
+            "knowledge"
+          ],
+          "returned_documents": [
+            {
+              "path": "02-papers/Other/GOLD0003.md",
+              "type": "literature-note",
+              "title": "Sim-to-Real Transfer of Robotic Control with Dynamics Randomization",
+              "evidence_status": "pdf_verified",
+              "paper_id": "sim2real2018",
+              "rank": 1,
+              "matched_terms": [
+                "observation",
+                "noise"
+              ],
+              "library_id": null,
+              "zotero_key": "GOLD0003",
+              "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018"
+            }
+          ],
+          "rank_semantics": "path traversal order; no semantic relevance score"
+        }
+      ],
+      "skill_candidates": [
+        {
+          "paper_id": "sim2real2018",
+          "library_id": null,
+          "zotero_key": "GOLD0003",
+          "source_version": "arXiv v3, 3 March 2018; first submission 2017, related ICRA publication 2018",
+          "paths": [
+            "03-fulltext/GOLD0003.md",
+            "02-papers/Other/GOLD0003.md"
+          ]
+        },
+        {
+          "paper_id": "diffusion_policy2023",
+          "library_id": null,
+          "zotero_key": "GOLD0002",
+          "source_version": "RSS 2023 proceedings, seven-author conference version",
+          "paths": [
+            "03-fulltext/GOLD0002.md"
+          ]
+        }
+      ]
+    }
+  ]
+}

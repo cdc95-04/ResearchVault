@@ -1,0 +1,24 @@
+{
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "source_id": "synthetic:number_drift",
+  "description": "Explicit locations disagree on the same numeric claim.",
+  "segments": {
+    "synthetic-page-1": "Two of four synthetic attempts met the toy success rule."
+  },
+  "facts": {
+    "success_rate": 0.5
+  },
+  "allowed_scope": [
+    "simulation",
+    "one-toy-setting"
+  ],
+  "expected_status": "note_supported",
+  "expected_assessment": {
+    "success_rate": 0.5
+  }
+}

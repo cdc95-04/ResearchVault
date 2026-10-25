@@ -1,0 +1,7 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "researchvault",
+  "version": "0.1.0",
+  "description": "Research evidence, literature, scientific reasoning and experiment workflow skills.",
+  "repository": "https://github.com/cdc95-04/ResearchVault-release"
+}

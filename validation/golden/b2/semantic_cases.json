@@ -1,0 +1,231 @@
+{
+  "format": 1,
+  "cases": [
+    {
+      "case_id": "sac2018--wrong_numeric_observation",
+      "source_paper": "sac2018",
+      "source_claim_id": "sac2018-c03",
+      "expected_error": "wrong_numeric_observation",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+        "pdf_page": 7,
+        "locator": "Section 5.1, Figure 1 protocol"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials.",
+        "scope": "The reported benchmark protocol, not confidence intervals or independent hardware replications.",
+        "observation": "The reported success rate is 98765 percent."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sac2018--overbroad_scope",
+      "source_paper": "sac2018",
+      "source_claim_id": "sac2018-c03",
+      "expected_error": "overbroad_scope",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+        "pdf_page": 7,
+        "locator": "Section 5.1, Figure 1 protocol"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials.",
+        "scope": "Proves universal success on every robot and task.",
+        "observation": "The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sac2018--wrong_table_condition",
+      "source_paper": "sac2018",
+      "source_claim_id": "sac2018-c03",
+      "expected_error": "wrong_table_condition",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+        "pdf_page": 7,
+        "locator": "Section 5.1, Figure 1 protocol"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "The benchmark comparison trains five instances per algorithm with different seeds and performs one evaluation rollout every 1000 environment steps; curves show means and shading shows minima and maxima across the five trials.",
+        "scope": "The reported benchmark protocol, not confidence intervals or independent hardware replications.",
+        "observation": "These measurements are from every physical robot with unseen tasks."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "diffusion_policy2023--wrong_numeric_observation",
+      "source_paper": "diffusion_policy2023",
+      "source_claim_id": "diffusion_policy2023_c3",
+      "expected_error": "wrong_numeric_observation",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+        "pdf_page": 6,
+        "locator": "Table II Transport ph; Table I caption and Section V.B on page 7"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations.",
+        "scope": "Simulation, visual observations, proficient-human demonstrations, success rates. These are not state-policy, multi-human, or physical-robot results.",
+        "observation": "The reported success rate is 98765 percent."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "diffusion_policy2023--overbroad_scope",
+      "source_paper": "diffusion_policy2023",
+      "source_claim_id": "diffusion_policy2023_c3",
+      "expected_error": "overbroad_scope",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+        "pdf_page": 6,
+        "locator": "Table II Transport ph; Table I caption and Section V.B on page 7"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations.",
+        "scope": "Proves universal success on every robot and task.",
+        "observation": "In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "diffusion_policy2023--wrong_table_condition",
+      "source_paper": "diffusion_policy2023",
+      "source_claim_id": "diffusion_policy2023_c3",
+      "expected_error": "wrong_table_condition",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+        "pdf_page": 6,
+        "locator": "Table II Transport ph; Table I caption and Section V.B on page 7"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "In visual Transport with proficient-human demonstrations, DiffusionPolicy-C scores 1.00/0.93 and LSTM-GMM 0.88/0.62. Each pair is best checkpoint versus last-ten-checkpoint average, aggregated over three training seeds and 50 environment initializations.",
+        "scope": "Simulation, visual observations, proficient-human demonstrations, success rates. These are not state-policy, multi-human, or physical-robot results.",
+        "observation": "These measurements are from every physical robot with unseen tasks."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sim2real2018--wrong_numeric_observation",
+      "source_paper": "sim2real2018",
+      "source_claim_id": "sim2real2018-c3",
+      "expected_error": "wrong_numeric_observation",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+        "pdf_page": 4,
+        "locator": "Section IV.C"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters.",
+        "scope": "The described simulation training setup; it does not mean every parameter is resampled at every timestep.",
+        "observation": "The reported success rate is 98765 percent."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sim2real2018--overbroad_scope",
+      "source_paper": "sim2real2018",
+      "source_claim_id": "sim2real2018-c3",
+      "expected_error": "overbroad_scope",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+        "pdf_page": 4,
+        "locator": "Section IV.C"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters.",
+        "scope": "Proves universal success on every robot and task.",
+        "observation": "Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters."
+      },
+      "human_review_status": "pending"
+    },
+    {
+      "case_id": "sim2real2018--wrong_table_condition",
+      "source_paper": "sim2real2018",
+      "source_claim_id": "sim2real2018-c3",
+      "expected_error": "wrong_table_condition",
+      "current_validator_result": {
+        "detected": false,
+        "diagnostic_codes": []
+      },
+      "error_class": "UNRESTRICTED_PROSE_SEMANTICS",
+      "deterministically_checkable": false,
+      "semantic_reasoning_required": true,
+      "evidence_anchor": {
+        "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+        "pdf_page": 4,
+        "locator": "Section IV.C"
+      },
+      "recommended_owner": "SEMANTIC_EVAL",
+      "candidate": {
+        "claim": "Dynamics randomization samples episode parameters at rollout start. Mass and damping stay constant within an episode, while action timestep and observation noise vary at each timestep; the setup randomizes 95 parameters.",
+        "scope": "The described simulation training setup; it does not mean every parameter is resampled at every timestep.",
+        "observation": "These measurements are from every physical robot with unseen tasks."
+      },
+      "human_review_status": "pending"
+    }
+  ],
+  "human_review_status": "pending"
+}

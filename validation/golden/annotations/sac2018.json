@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "paper_id": "sac2018",
+  "role": "A",
+  "title": "Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor",
+  "identifiers": {
+    "arxiv": "1801.01290",
+    "doi": null,
+    "arxiv_doi": "10.48550/arXiv.1801.01290",
+    "pmlr": "v80/haarnoja18b"
+  },
+  "source_version": "PMLR volume 80, ICML 2018, proceedings pages 1861-1870; publisher main PDF, retrieved 2026-09-28",
+  "publisher_url": "https://proceedings.mlr.press/v80/haarnoja18b.html",
+  "pdf_url": "https://proceedings.mlr.press/v80/haarnoja18b/haarnoja18b.pdf",
+  "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+  "pdf_pages": 10,
+  "authors": [
+    "Tuomas Haarnoja",
+    "Aurick Zhou",
+    "Pieter Abbeel",
+    "Sergey Levine"
+  ],
+  "year": 2018,
+  "claims": [
+    {
+      "id": "sac2018-c01",
+      "statement": "The objective combines expected rewards and policy entropy; temperature alpha sets their relative weight, and the reward-only objective is recovered as alpha approaches zero.",
+      "evidence_locator": {
+        "pdf_page": 3,
+        "section": "3.2. Maximum Entropy Reinforcement Learning",
+        "table_or_figure": null,
+        "equation": "1"
+      },
+      "numeric_facts": [],
+      "scope": "Objective definition in this paper.",
+      "unsupported_extension": "Does not establish automatic temperature tuning."
+    },
+    {
+      "id": "sac2018-c02",
+      "statement": "SAC independently trains two Q-functions and uses their minimum in the value and policy gradients to reduce positive bias.",
+      "evidence_locator": {
+        "pdf_page": 5,
+        "section": "4.2. Soft Actor-Critic",
+        "table_or_figure": "Algorithm 1 and following explanatory text",
+        "equation": "6 and 13"
+      },
+      "numeric_facts": [
+        {
+          "value": 2,
+          "unit": "Q-functions",
+          "condition": "Presented SAC algorithm."
+        }
+      ],
+      "scope": "This algorithm's update rule.",
+      "unsupported_extension": "Does not guarantee removal of all estimation bias."
+    },
+    {
+      "id": "sac2018-c03",
+      "statement": "The comparison uses five seeded runs per algorithm, one evaluation rollout every 1000 environment steps, mean curves, and minimum-to-maximum shading.",
+      "evidence_locator": {
+        "pdf_page": 7,
+        "section": "5.1. Comparative Evaluation",
+        "table_or_figure": "Figure 1 protocol; figure is on PDF page 6"
+      },
+      "numeric_facts": [
+        {
+          "value": 5,
+          "unit": "seeded runs per algorithm",
+          "condition": "Section 5.1 comparison."
+        },
+        {
+          "value": 1,
+          "unit": "evaluation rollout",
+          "condition": "Per evaluation interval."
+        },
+        {
+          "value": 1000,
+          "unit": "environment steps per evaluation interval",
+          "condition": "Each run."
+        }
+      ],
+      "scope": "Reported comparison protocol.",
+      "unsupported_extension": "Shading is not a confidence interval."
+    }
+  ],
+  "retrieval_queries": [
+    {
+      "id": "sac2018-q01",
+      "query": "temperature parameter",
+      "expected_claim_ids": ["sac2018-c01"],
+      "kind": "exact_term"
+    },
+    {
+      "id": "sac2018-q02",
+      "query": "How often was performance checked, and how were repeated benchmark runs aggregated?",
+      "expected_claim_ids": ["sac2018-c03"],
+      "kind": "semantic_paraphrase"
+    }
+  ],
+  "identity_cautions": [
+    "Evidence locators use one-based pages of the hashed publisher main PDF, not proceedings page numbers or an arXiv PDF.",
+    "The arXiv landing page confirms matching title and author order; its current version is v2. Byte equivalence with the publisher PDF has not been established.",
+    "The publisher citation provides no article DOI. The separately recorded arXiv DOI identifies the preprint and must not be promoted to a publisher article DOI.",
+    "Do not substitute later SAC papers, supplements, or software versions for this source."
+  ],
+  "review": {
+    "status": "agent_independent_pending_human",
+    "human_reviewed": false,
+    "implementation_outputs_seen": false,
+    "implementation_source_seen": false,
+    "tests_seen": false,
+    "queries_frozen_before_implementation_outputs": true,
+    "evidence_basis": "Publisher metadata, original publisher PDF extracted with pypdf, and visual inspection of rendered PDF pages 5 and 7; arXiv landing page for identity only.",
+    "reviewed_on": "2026-09-28"
+  }
+}

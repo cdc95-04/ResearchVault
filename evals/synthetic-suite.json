@@ -1,0 +1,46 @@
+{
+  "suite_id": "researchvault-synthetic-calibration",
+  "version": "1",
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "rubric": "rubrics/structured-v1.json",
+  "golden": "golden/calibration-v1.json",
+  "cases": [
+    {
+      "id": "bounded_note",
+      "source": "fixtures/bounded_note.json"
+    },
+    {
+      "id": "invented_quote",
+      "source": "fixtures/invented_quote.json"
+    },
+    {
+      "id": "publication_swap",
+      "source": "fixtures/publication_swap.json"
+    },
+    {
+      "id": "scope_escalation",
+      "source": "fixtures/scope_escalation.json"
+    },
+    {
+      "id": "all_attempts",
+      "source": "fixtures/all_attempts.json"
+    },
+    {
+      "id": "inconclusive_promotion",
+      "source": "fixtures/inconclusive_promotion.json"
+    },
+    {
+      "id": "bounded_review",
+      "source": "fixtures/bounded_review.json"
+    },
+    {
+      "id": "number_drift",
+      "source": "fixtures/number_drift.json"
+    }
+  ]
+}

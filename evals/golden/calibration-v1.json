@@ -1,0 +1,83 @@
+{
+  "version": "1",
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "cases": {
+    "bounded_note": {
+      "fabrication": "pass",
+      "source_identity": "pass",
+      "evidence_ceiling": "pass",
+      "evidence_label": "pass",
+      "behavior": "pass",
+      "numerical_consistency": "pass",
+      "source_digest": "pass"
+    },
+    "invented_quote": {
+      "fabrication": "fail",
+      "source_identity": "pass",
+      "evidence_ceiling": "pass",
+      "evidence_label": "pass",
+      "behavior": "pass",
+      "numerical_consistency": "pass",
+      "source_digest": "pass"
+    },
+    "publication_swap": {
+      "fabrication": "pass",
+      "source_identity": "fail",
+      "evidence_ceiling": "pass",
+      "evidence_label": "pass",
+      "behavior": "pass",
+      "numerical_consistency": "pass",
+      "source_digest": "pass"
+    },
+    "scope_escalation": {
+      "fabrication": "pass",
+      "source_identity": "pass",
+      "evidence_ceiling": "fail",
+      "evidence_label": "pass",
+      "behavior": "pass",
+      "numerical_consistency": "pass",
+      "source_digest": "pass"
+    },
+    "all_attempts": {
+      "fabrication": "pass",
+      "source_identity": "pass",
+      "evidence_ceiling": "pass",
+      "evidence_label": "pass",
+      "behavior": "pass",
+      "numerical_consistency": "pass",
+      "source_digest": "pass"
+    },
+    "inconclusive_promotion": {
+      "fabrication": "pass",
+      "source_identity": "pass",
+      "evidence_ceiling": "pass",
+      "evidence_label": "pass",
+      "behavior": "fail",
+      "numerical_consistency": "pass",
+      "source_digest": "pass"
+    },
+    "bounded_review": {
+      "fabrication": "pass",
+      "source_identity": "pass",
+      "evidence_ceiling": "pass",
+      "evidence_label": "pass",
+      "behavior": "pass",
+      "numerical_consistency": "pass",
+      "source_digest": "pass"
+    },
+    "number_drift": {
+      "fabrication": "pass",
+      "source_identity": "pass",
+      "evidence_ceiling": "pass",
+      "evidence_label": "pass",
+      "behavior": "pass",
+      "numerical_consistency": "fail",
+      "source_digest": "pass"
+    }
+  }
+}

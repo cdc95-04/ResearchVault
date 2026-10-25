@@ -1,0 +1,38 @@
+{
+  "status": "GOLDEN_REVIEW_REQUIRED",
+  "human_review_status": "pending",
+  "case_id": "diffusion-policy-ddim-source-discrepancy",
+  "original_annotation_path": "validation/golden/annotations/diffusion_policy2023.json",
+  "original_claim": {
+    "id": "diffusion_policy2023_c2",
+    "statement": "The reported real-world DDIM configuration uses 100 training denoising iterations and 10 inference iterations, with 0.1-second inference latency on an Nvidia 3080 GPU.",
+    "evidence_locator": {
+      "pdf_page": 4,
+      "section": "III.D. Accelerating Inference for Real-time Control",
+      "table_or_figure": null
+    },
+    "numeric_facts": [
+      {
+        "value": 100,
+        "unit": "denoising iterations",
+        "condition": "DDIM training configuration in the reported real-world experiments"
+      },
+      {
+        "value": 10,
+        "unit": "denoising iterations",
+        "condition": "DDIM inference configuration in the reported real-world experiments"
+      },
+      {
+        "value": 0.1,
+        "unit": "seconds",
+        "condition": "Inference latency on an Nvidia 3080 GPU with the reported DDIM configuration"
+      }
+    ],
+    "scope": "The iteration counts concern diffusion, not optimizer epochs.",
+    "unsupported_extension": "The timing is not a hardware-independent latency guarantee."
+  },
+  "source_review_path": "validation/golden/b2/golden_source_review.json",
+  "original_values_preserved": true,
+  "expected_answer_modified": false,
+  "reason": "Main-text inference 10 versus appendix real-world inference 16 is not explicitly reconciled by the frozen PDF. Original section-specific facts remain preserved; no winner selected."
+}

@@ -1,0 +1,314 @@
+{
+  "format": 1,
+  "review_kind": "agent_review",
+  "human_review_status": "pending",
+  "semantic_judgment_performed_by_checker": false,
+  "requests": [
+    {
+      "case_id": "diffusion_policy2023_q1",
+      "request_id": "request-1",
+      "query": "DDIM training inference iterations Nvidia 3080 latency",
+      "raw": {
+        "passed": true,
+        "accepted_papers": [
+          "diffusion_policy2023"
+        ],
+        "frozen_target_found": true
+      },
+      "skill": {
+        "passed": true,
+        "accepted_papers": [
+          "diffusion_policy2023"
+        ],
+        "frozen_target_found": true
+      }
+    },
+    {
+      "case_id": "diffusion_policy2023_q2",
+      "request_id": "request-2",
+      "query": "How can the robot plan a future movement sequence while staying responsive to new observations?",
+      "raw": {
+        "passed": false,
+        "accepted_papers": [],
+        "frozen_target_found": false
+      },
+      "skill": {
+        "passed": true,
+        "accepted_papers": [
+          "diffusion_policy2023"
+        ],
+        "frozen_target_found": true
+      }
+    },
+    {
+      "case_id": "sac2018-q01",
+      "request_id": "request-3",
+      "query": "temperature parameter",
+      "raw": {
+        "passed": true,
+        "accepted_papers": [
+          "sac2018"
+        ],
+        "frozen_target_found": true
+      },
+      "skill": {
+        "passed": true,
+        "accepted_papers": [
+          "sac2018"
+        ],
+        "frozen_target_found": true
+      }
+    },
+    {
+      "case_id": "sac2018-q02",
+      "request_id": "request-4",
+      "query": "How often was performance checked, and how were repeated benchmark runs aggregated?",
+      "raw": {
+        "passed": false,
+        "accepted_papers": [],
+        "frozen_target_found": false
+      },
+      "skill": {
+        "passed": true,
+        "accepted_papers": [
+          "diffusion_policy2023",
+          "sac2018"
+        ],
+        "frozen_target_found": true
+      }
+    },
+    {
+      "case_id": "sim2real2018-q1",
+      "request_id": "request-5",
+      "query": "fixed action timestep",
+      "raw": {
+        "passed": true,
+        "accepted_papers": [
+          "sim2real2018"
+        ],
+        "frozen_target_found": true
+      },
+      "skill": {
+        "passed": true,
+        "accepted_papers": [
+          "sim2real2018"
+        ],
+        "frozen_target_found": true
+      }
+    },
+    {
+      "case_id": "sim2real2018-q2",
+      "request_id": "request-6",
+      "query": "Which simulated properties stay unchanged during one rollout, and which disturbances are redrawn while the controller runs?",
+      "raw": {
+        "passed": false,
+        "accepted_papers": [],
+        "frozen_target_found": false
+      },
+      "skill": {
+        "passed": true,
+        "accepted_papers": [
+          "sim2real2018"
+        ],
+        "frozen_target_found": true
+      }
+    }
+  ],
+  "raw_passed": 3,
+  "skill_passed": 6,
+  "total": 6,
+  "observed_digest": "295422e814b81a782b1ec51324e160e9130283fc38c58f65acf9ce2ba5b0f42b",
+  "captures_digest": "3dd61f899fd66c0e9d7bd3ebb5a5f2b7e41d840fddf24f1e56a6908cf53cc920",
+  "numerical_regression": {
+    "matched": 26,
+    "total": 26,
+    "checks": [
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c02",
+        "golden_index": 0,
+        "capture_name": "q_functions",
+        "passed": true
+      },
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c03",
+        "golden_index": 0,
+        "capture_name": "training_instances",
+        "passed": true
+      },
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c03",
+        "golden_index": 1,
+        "capture_name": "evaluation_rollouts",
+        "passed": true
+      },
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c03",
+        "golden_index": 2,
+        "capture_name": "evaluation_interval",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c2",
+        "golden_index": 0,
+        "capture_name": "training_iterations",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c2",
+        "golden_index": 1,
+        "capture_name": "inference_iterations",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c2",
+        "golden_index": 2,
+        "capture_name": "latency",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 0,
+        "capture_name": "diffusion_best",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 1,
+        "capture_name": "diffusion_last",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 2,
+        "capture_name": "baseline_best",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 3,
+        "capture_name": "baseline_last",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 0,
+        "capture_name": "sim_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 1,
+        "capture_name": "sim_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 2,
+        "capture_name": "sim_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 3,
+        "capture_name": "real_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 4,
+        "capture_name": "real_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 5,
+        "capture_name": "real_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 0,
+        "capture_name": "all_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 1,
+        "capture_name": "all_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 2,
+        "capture_name": "all_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 3,
+        "capture_name": "fixed_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 4,
+        "capture_name": "fixed_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 5,
+        "capture_name": "fixed_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 6,
+        "capture_name": "no_noise_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 7,
+        "capture_name": "no_noise_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 8,
+        "capture_name": "no_noise_trials",
+        "passed": true
+      }
+    ],
+    "unit_and_condition_review": "agent reviewed explicit mappings, pending human acceptance"
+  },
+  "new_backend": null,
+  "embeddings_introduced": false,
+  "vector_database_introduced": false
+}

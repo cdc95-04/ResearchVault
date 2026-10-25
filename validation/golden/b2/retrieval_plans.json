@@ -1,0 +1,159 @@
+{
+  "provenance": "independentqueryplanning",
+  "expected_answers_seen": false,
+  "corpus_seen_before_plan": false,
+  "human_review_status": "pending",
+  "plan_status": "frozen_before_execution",
+  "source_scope": [
+    ".qa/b2/retrieval_requests.json",
+    "SPECIFICATION.md RV-05",
+    "ARCHITECTURE.md",
+    "skills/literature-retrieval/SKILL.md",
+    "references/evidence.md"
+  ],
+  "execution_contract": {
+    "maximum_lexical_calls_per_request": 4,
+    "query_order": "original_query, then expansions in listed order, subject to the shared four-call budget",
+    "initial_layers": [
+      "Notes",
+      "Knowledge"
+    ],
+    "fulltext_gate": "Supplementary Fulltext is permitted only when explicitly requested or when local Note recall is empty; disclose the gate, actual layers and raw-match limits. A Fulltext invocation consumes the same four-call budget.",
+    "query_mutation": "No new terms, paper names, filenames or identities may be added after execution or expected-answer inspection. Unexecuted frozen expansions remain unexecuted, not silently replaced.",
+    "selection": "Use inspected evidence and resolve namespaced parent identities; matching words alone do not establish an answer."
+  },
+  "plans": [
+    {
+      "request_id": "request-1",
+      "original_query": "DDIM training inference iterations Nvidia 3080 latency",
+      "interpretation": "Seek source-backed information about DDIM-related training and inference workloads, including iteration or sampling-step counts and latency measured on the stated GPU. Training updates, denoising steps per prediction and end-to-end controller latency are different quantities; the query supplies no values, unit, batch size or implementation conditions.",
+      "expansions": [
+        {
+          "query": "DDIM",
+          "relation": "direct_terms",
+          "reason": "Keep the explicit method anchor while removing the original conjunction of workload and hardware terms; a DDIM mention is a candidate, not proof that the paper reports all requested measurements."
+        },
+        {
+          "query": "sampling steps",
+          "relation": "related_concept",
+          "reason": "Inference iterations in a diffusion sampler may be described as sampling or denoising steps. This wording does not equate inference steps with training iterations."
+        },
+        {
+          "query": "3080",
+          "relation": "direct_terms",
+          "reason": "Preserve the explicit GPU model as a short hardware anchor. Inspect nearby text for whether a measurement concerns training, sampling or total latency, and retain its units and conditions."
+        }
+      ]
+    },
+    {
+      "request_id": "request-2",
+      "original_query": "How can the robot plan a future movement sequence while staying responsive to new observations?",
+      "interpretation": "Seek a mechanism that predicts a sequence of future actions, executes a bounded portion, incorporates a new observation and can revise the remaining plan. Receding-horizon execution is one candidate mechanism. Sequence prediction alone does not establish feedback, and this question does not establish use of a world model, VLA or a particular planning algorithm.",
+      "expansions": [
+        {
+          "query": "receding horizon",
+          "relation": "narrower_concept",
+          "reason": "Search a specific execution pattern that can reconcile future-sequence planning with repeated observation-conditioned updates. Confirm how much of the prediction is executed and when replanning occurs."
+        },
+        {
+          "query": "action horizon",
+          "relation": "related_concept",
+          "reason": "The duration or number of actions executed before a new decision can explain responsiveness. It must be distinguished from the prediction horizon and observation horizon."
+        },
+        {
+          "query": "closed loop",
+          "relation": "broader_concept",
+          "reason": "Feedback-driven control is a broader candidate family. Inspect whether fresh observations actually affect the next action sequence rather than inferring that property from the label alone."
+        }
+      ]
+    },
+    {
+      "request_id": "request-3",
+      "original_query": "temperature parameter",
+      "interpretation": "The query is under-specified: temperature may refer to an algorithmic sampling parameter, a softmax or probability-scaling parameter, or a physical quantity. Identify candidate usages, their defining expression, role and units from local evidence. Do not choose a paper or parameter meaning solely because one match appears first.",
+      "expansions": [
+        {
+          "query": "temperature",
+          "relation": "direct_terms",
+          "reason": "Retain the sole substantive anchor while allowing the source to call it a coefficient, scale, setting or physical variable instead of a parameter. This search does not disambiguate the sense."
+        },
+        {
+          "query": "sampling temperature",
+          "relation": "narrower_concept",
+          "reason": "Test one common algorithmic sense concerning sampling variability. Treat it as a candidate branch; it is not a synonym for every temperature parameter."
+        },
+        {
+          "query": "softmax temperature",
+          "relation": "narrower_concept",
+          "reason": "Test another common sense concerning probability concentration. A shared name does not establish the same definition, value or effect as sampling or physical temperature."
+        }
+      ]
+    },
+    {
+      "request_id": "request-4",
+      "original_query": "How often was performance checked, and how were repeated benchmark runs aggregated?",
+      "interpretation": "Seek two methodological facts: the schedule for measuring performance and the aggregation rule across repeated benchmark attempts. Preserve the distinction between evaluation checkpoints, evaluation episodes, training seeds, tasks and repeated trials. A reported mean does not by itself identify its denominator, weighting, checkpoint selection or treatment of failures.",
+      "expansions": [
+        {
+          "query": "evaluation interval",
+          "relation": "related_concept",
+          "reason": "Performance-check cadence may be specified as an interval in training steps, epochs or time. Read the associated unit and whether it describes evaluation or logging."
+        },
+        {
+          "query": "multiple seeds",
+          "relation": "narrower_concept",
+          "reason": "Independent seed repetitions are one possible basis for repeated benchmark runs. They do not encompass all forms of repetition and must not be confused with multiple episodes under one trained model."
+        },
+        {
+          "query": "mean standard deviation",
+          "relation": "narrower_concept",
+          "reason": "Search a conventional statistical reporting pattern as one possible aggregation. Confirm the actual statistic, source population and denominator; do not assume this rule if the source uses a median, maximum or another summary."
+        }
+      ]
+    },
+    {
+      "request_id": "request-5",
+      "original_query": "fixed action timestep",
+      "interpretation": "Seek whether actions are applied or selected at a constant physical-time interval and how the source defines that interval. A control decision period, an action hold or repeat count, a simulator integration step and a predicted action index are related but distinct. Any conversion to frequency needs explicit clock semantics and units.",
+      "expansions": [
+        {
+          "query": "control timestep",
+          "relation": "related_concept",
+          "reason": "A source may describe the action decision interval using control-clock terminology. Check whether it refers to policy updates, low-level control updates or another clock."
+        },
+        {
+          "query": "control frequency",
+          "relation": "related_concept",
+          "reason": "A constant decision interval may be reported as a frequency. The reciprocal relation is valid only for the same fixed clock; record source units and avoid mixing controller and simulator frequencies."
+        },
+        {
+          "query": "action repeat",
+          "relation": "related_concept",
+          "reason": "Holding an action for several simulator steps can define an effective action interval. A repeat count alone is insufficient without the simulator step duration and the source's scheduling definition."
+        }
+      ]
+    },
+    {
+      "request_id": "request-6",
+      "original_query": "Which simulated properties stay unchanged during one rollout, and which disturbances are redrawn while the controller runs?",
+      "interpretation": "Seek the temporal scope of simulation randomization: properties sampled at initialization and held fixed within a rollout versus disturbances or noise sampled during execution. Identify each variable, distribution, sampling event and persistence interval from source text. Do not assume that every physical parameter is episode-constant or that every disturbance is redrawn at each action.",
+      "expansions": [
+        {
+          "query": "domain randomization",
+          "relation": "broader_concept",
+          "reason": "Randomized simulation parameters and disturbances can be described within this broader family. The label itself does not reveal whether draws occur once per rollout or during execution."
+        },
+        {
+          "query": "external perturbations",
+          "relation": "narrower_concept",
+          "reason": "Applied disturbances are one candidate class of runtime variation. Check their trigger, duration and redraw schedule rather than assuming independent draws at every controller step."
+        },
+        {
+          "query": "observation noise",
+          "relation": "narrower_concept",
+          "reason": "Observation noise is another candidate runtime disturbance. Distinguish a persistent episode bias from independently resampled measurement noise, and keep observation and process disturbances separate."
+        }
+      ]
+    }
+  ]
+}

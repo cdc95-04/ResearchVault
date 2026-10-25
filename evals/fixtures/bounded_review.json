@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "kind": "agent-curated synthetic",
+    "synthetic": true,
+    "human_reviewed": false,
+    "real_papers": false
+  },
+  "source_id": "synthetic:bounded_review",
+  "description": "Incomplete challenge work remains an explicit review limit.",
+  "segments": {
+    "synthetic-page-1": "The challenge query was planned but has not been executed."
+  },
+  "facts": {
+    "challenge_executed": false
+  },
+  "allowed_scope": [
+    "simulation",
+    "one-toy-setting"
+  ],
+  "expected_status": "note_supported",
+  "expected_assessment": {
+    "gap_status": "unverified",
+    "coverage_limit": "challenge query not executed"
+  }
+}

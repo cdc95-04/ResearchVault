@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.deps/
+.qa/
+*.egg-info/
+build/
+dist/
+config/local.yaml
+runtime/
+cache/
+staging/
+.env
+.env.*
+*.pdf
+/personal-vault/
+/vault/

@@ -1,0 +1,641 @@
+{
+  "format": 1,
+  "real_source_papers": 3,
+  "human_reviewed": false,
+  "status": "candidate_with_known_gaps",
+  "phase_c_gate": "not_met",
+  "real_zotero_writes": 0,
+  "real_obsidian_modifications": 0,
+  "input_digests": {
+    "annotations/diffusion_policy2023.json": "582dc476cbc9947f8c35675ca32bba18d54afa01055606163a65e22b921fb065",
+    "annotations/sac2018.json": "ad9243ec6940347b7960d36ae43029301eb7b9f0a708d055710a120a8f34a72f",
+    "annotations/sim2real2018.json": "fe936ec53927913fa5ab7a6b1e366dce8e7b7beaaea0491a0e85049579dc30dc",
+    "captures/diffusion_policy2023.json": "75d8cbc503948ebf1c456ac5f883d15b6a73cafef92b4c471b308effdf7fd853",
+    "captures/sac2018.json": "9d4d97a4cccc8ffbf2a1aecaeac78e370c0c2222b7d280fd4183caa7c5df8992",
+    "captures/sim2real2018.json": "070f86289f685f5f688c14dfdc489f51075512121b28cbfbd680078da15cfe07",
+    "comparison.json": "a0fa5aac1b06212357ea03146f32a2198f707e75c4d7b8ca13e15892aa0ec99b"
+  },
+  "papers": [
+    {
+      "paper_id": "sac2018",
+      "identity_origin": "synthetic parent/attachment keys",
+      "real_zotero_binding": "not_covered",
+      "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+      "pdf_pages": 10,
+      "archive_body_digest_matches": true,
+      "original_bytes_preserved": true,
+      "repeat_archive_reused": true,
+      "note_path": "02-papers/Other/GOLD0001.md",
+      "fulltext_path": "03-fulltext/GOLD0001.md",
+      "ledger_verdict": "NOT_TESTED"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "identity_origin": "synthetic parent/attachment keys",
+      "real_zotero_binding": "not_covered",
+      "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+      "pdf_pages": 16,
+      "archive_body_digest_matches": true,
+      "original_bytes_preserved": true,
+      "repeat_archive_reused": true,
+      "note_path": "02-papers/Other/GOLD0002.md",
+      "fulltext_path": "03-fulltext/GOLD0002.md",
+      "ledger_verdict": "NOT_TESTED"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "identity_origin": "synthetic parent/attachment keys",
+      "real_zotero_binding": "not_covered",
+      "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+      "pdf_pages": 8,
+      "archive_body_digest_matches": true,
+      "original_bytes_preserved": true,
+      "repeat_archive_reused": true,
+      "note_path": "02-papers/Other/GOLD0003.md",
+      "fulltext_path": "03-fulltext/GOLD0003.md",
+      "ledger_verdict": "NOT_TESTED"
+    }
+  ],
+  "baseline": {
+    "valid": true,
+    "errors": 0,
+    "warnings": 0,
+    "records": 9,
+    "diagnostics": []
+  },
+  "restored_baseline_valid": true,
+  "numeric_consistency": {
+    "matched": 26,
+    "total": 26,
+    "checks": [
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c02",
+        "golden_index": 0,
+        "capture_name": "q_functions",
+        "passed": true
+      },
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c03",
+        "golden_index": 0,
+        "capture_name": "training_instances",
+        "passed": true
+      },
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c03",
+        "golden_index": 1,
+        "capture_name": "evaluation_rollouts",
+        "passed": true
+      },
+      {
+        "paper_id": "sac2018",
+        "claim_id": "sac2018-c03",
+        "golden_index": 2,
+        "capture_name": "evaluation_interval",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c2",
+        "golden_index": 0,
+        "capture_name": "training_iterations",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c2",
+        "golden_index": 1,
+        "capture_name": "inference_iterations",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c2",
+        "golden_index": 2,
+        "capture_name": "latency",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 0,
+        "capture_name": "diffusion_best",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 1,
+        "capture_name": "diffusion_last",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 2,
+        "capture_name": "baseline_best",
+        "passed": true
+      },
+      {
+        "paper_id": "diffusion_policy2023",
+        "claim_id": "diffusion_policy2023_c3",
+        "golden_index": 3,
+        "capture_name": "baseline_last",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 0,
+        "capture_name": "sim_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 1,
+        "capture_name": "sim_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 2,
+        "capture_name": "sim_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 3,
+        "capture_name": "real_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 4,
+        "capture_name": "real_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c1",
+        "golden_index": 5,
+        "capture_name": "real_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 0,
+        "capture_name": "all_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 1,
+        "capture_name": "all_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 2,
+        "capture_name": "all_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 3,
+        "capture_name": "fixed_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 4,
+        "capture_name": "fixed_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 5,
+        "capture_name": "fixed_trials",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 6,
+        "capture_name": "no_noise_success",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 7,
+        "capture_name": "no_noise_uncertainty",
+        "passed": true
+      },
+      {
+        "paper_id": "sim2real2018",
+        "claim_id": "sim2real2018-c2",
+        "golden_index": 8,
+        "capture_name": "no_noise_trials",
+        "passed": true
+      }
+    ],
+    "unit_and_condition_review": "agent reviewed explicit mappings, pending human acceptance"
+  },
+  "retrieval": [
+    {
+      "paper_id": "sac2018",
+      "id": "sac2018-q01",
+      "query": "temperature parameter",
+      "expected_claim_ids": [
+        "sac2018-c01"
+      ],
+      "kind": "exact_term",
+      "relevant_paper_found": true,
+      "matched_paths": [
+        "03-fulltext/GOLD0001.md"
+      ],
+      "granularity": "paper-level; engine does not rank individual claims"
+    },
+    {
+      "paper_id": "sac2018",
+      "id": "sac2018-q02",
+      "query": "How often was performance checked, and how were repeated benchmark runs aggregated?",
+      "expected_claim_ids": [
+        "sac2018-c03"
+      ],
+      "kind": "semantic_paraphrase",
+      "relevant_paper_found": false,
+      "matched_paths": [],
+      "granularity": "paper-level; engine does not rank individual claims"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "id": "diffusion_policy2023_q1",
+      "query": "DDIM training inference iterations Nvidia 3080 latency",
+      "expected_claim_ids": [
+        "diffusion_policy2023_c2"
+      ],
+      "kind": "exact_terms",
+      "relevant_paper_found": true,
+      "matched_paths": [
+        "02-papers/Other/GOLD0002.md"
+      ],
+      "granularity": "paper-level; engine does not rank individual claims"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "id": "diffusion_policy2023_q2",
+      "query": "How can the robot plan a future movement sequence while staying responsive to new observations?",
+      "expected_claim_ids": [
+        "diffusion_policy2023_c1"
+      ],
+      "kind": "semantic_paraphrase",
+      "relevant_paper_found": false,
+      "matched_paths": [],
+      "granularity": "paper-level; engine does not rank individual claims"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "id": "sim2real2018-q1",
+      "query": "fixed action timestep",
+      "expected_claim_ids": [
+        "sim2real2018-c2"
+      ],
+      "kind": "exact_term",
+      "relevant_paper_found": true,
+      "matched_paths": [
+        "02-papers/Other/GOLD0003.md"
+      ],
+      "granularity": "paper-level; engine does not rank individual claims"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "id": "sim2real2018-q2",
+      "query": "Which simulated properties stay unchanged during one rollout, and which disturbances are redrawn while the controller runs?",
+      "expected_claim_ids": [
+        "sim2real2018-c3"
+      ],
+      "kind": "semantic_paraphrase",
+      "relevant_paper_found": false,
+      "matched_paths": [],
+      "granularity": "paper-level; engine does not rank individual claims"
+    }
+  ],
+  "retrieval_relevant_papers_found": 3,
+  "retrieval_query_count": 6,
+  "injections": [
+    {
+      "paper_id": "sac2018",
+      "name": "selected_parent_doi_conflict",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "explicit parent selection with a DOI absent from or conflicting with its metadata"
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "arxiv_version_conflict",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "explicit mismatched preprint version"
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "duplicate_identifier",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "same external identifier assigned to two parents"
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "fulltext_drift",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "integrity",
+      "mechanism": "changed only the temporary archived body"
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "reciprocal_link",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "linkage",
+      "mechanism": "Vault validator on an altered temporary Fulltext backlink"
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "impossible_page",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "provenance",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": [
+        "FABRICATED_PAGE"
+      ]
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "fabricated_quote",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "provenance",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": [
+        "FABRICATED_QUOTE"
+      ]
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "wrong_numeric_observation",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "overbroad_scope",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "wrong_table_condition",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "sac2018",
+      "name": "literature_as_supported",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "accounting",
+      "mechanism": "published results cannot establish an experimental ledger verdict"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "selected_parent_doi_conflict",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "explicit parent selection with a DOI absent from or conflicting with its metadata"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "arxiv_version_conflict",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "explicit mismatched preprint version"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "duplicate_identifier",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "same external identifier assigned to two parents"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "fulltext_drift",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "integrity",
+      "mechanism": "changed only the temporary archived body"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "reciprocal_link",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "linkage",
+      "mechanism": "Vault validator on an altered temporary Fulltext backlink"
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "impossible_page",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "provenance",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": [
+        "FABRICATED_PAGE"
+      ]
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "fabricated_quote",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "provenance",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": [
+        "FABRICATED_QUOTE"
+      ]
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "wrong_numeric_observation",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "overbroad_scope",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "wrong_table_condition",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "diffusion_policy2023",
+      "name": "literature_as_supported",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "accounting",
+      "mechanism": "published results cannot establish an experimental ledger verdict"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "selected_parent_doi_conflict",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "explicit parent selection with a DOI absent from or conflicting with its metadata"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "arxiv_version_conflict",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "explicit mismatched preprint version"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "duplicate_identifier",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "identity",
+      "mechanism": "same external identifier assigned to two parents"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "fulltext_drift",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "integrity",
+      "mechanism": "changed only the temporary archived body"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "reciprocal_link",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "linkage",
+      "mechanism": "Vault validator on an altered temporary Fulltext backlink"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "impossible_page",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "provenance",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": [
+        "FABRICATED_PAGE"
+      ]
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "fabricated_quote",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "provenance",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": [
+        "FABRICATED_QUOTE"
+      ]
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "wrong_numeric_observation",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "overbroad_scope",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "wrong_table_condition",
+      "expected_invalid": true,
+      "detected": false,
+      "category": "semantic",
+      "mechanism": "page-bound observation and claim binding check",
+      "diagnostic_codes": []
+    },
+    {
+      "paper_id": "sim2real2018",
+      "name": "literature_as_supported",
+      "expected_invalid": true,
+      "detected": true,
+      "category": "accounting",
+      "mechanism": "published results cannot establish an experimental ledger verdict"
+    }
+  ],
+  "injected_errors_detected": 24,
+  "injected_errors_unscored": 0,
+  "injected_error_count": 33,
+  "limitations": [
+    "Independent agent annotations and blind agent captures, not human ground truth.",
+    "Identity/intake use explicit fixture keys; no real Zotero item exists.",
+    "Validator establishes structural provenance, not observation entailment.",
+    "Published results remain literature; no local experimental Result Bundle was fabricated.",
+    "The phase-one eval-run remains synthetic-only; this separate runner measures public-paper integration."
+  ]
+}

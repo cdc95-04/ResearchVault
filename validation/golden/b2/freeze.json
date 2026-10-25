@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "baseline_commit": "1f53e4ea5b805f0fedd52cc075df0997470b9f58",
+  "files": {
+    "scripts/validate_golden.py": "3bfe12ab910efe8b395e8a8b93a1a85577b9e347536694a00368eda192705754",
+    "validation/golden/annotations/diffusion_policy2023.json": "582dc476cbc9947f8c35675ca32bba18d54afa01055606163a65e22b921fb065",
+    "validation/golden/annotations/diffusion_policy2023.review.md": "0aef55c7bb7c0fc78152dd8eef393aeacec2653372213fd2e47f8e99a6efc3ad",
+    "validation/golden/annotations/sac2018.json": "ad9243ec6940347b7960d36ae43029301eb7b9f0a708d055710a120a8f34a72f",
+    "validation/golden/annotations/sac2018.review.md": "25ca44af747de6a0bdd7fd889ae5dfc025fd809b230fa0dba57e9659512c720d",
+    "validation/golden/annotations/sim2real2018.json": "fe936ec53927913fa5ab7a6b1e366dce8e7b7beaaea0491a0e85049579dc30dc",
+    "validation/golden/annotations/sim2real2018.review.md": "6694c1fb9a8edd2f19fab8c23db5841071890103ae6ba2e1cec07a2c2422fe74",
+    "validation/golden/captures/diffusion_policy2023.json": "75d8cbc503948ebf1c456ac5f883d15b6a73cafef92b4c471b308effdf7fd853",
+    "validation/golden/captures/sac2018.json": "9d4d97a4cccc8ffbf2a1aecaeac78e370c0c2222b7d280fd4183caa7c5df8992",
+    "validation/golden/captures/sim2real2018.json": "070f86289f685f5f688c14dfdc489f51075512121b28cbfbd680078da15cfe07",
+    "validation/golden/comparison.json": "a0fa5aac1b06212357ea03146f32a2198f707e75c4d7b8ca13e15892aa0ec99b",
+    "validation/golden/comparison.review.md": "0f85a5a4ec3254e441b858e7df0ae2f77268c07017d7d1de32084a641ea05885",
+    "validation/golden/reports/observed.json": "67f061e23a71ceef78b3c0316583d3ac58b422f1e71d6e10ff15b117914b8a58"
+  },
+  "papers": [
+    {
+      "paper_id": "diffusion_policy2023",
+      "identifiers": {
+        "arxiv": "2303.04137",
+        "doi": "10.15607/RSS.2023.XIX.026"
+      },
+      "source_version": "RSS 2023 proceedings version, downloaded from the publisher; the arXiv identifier denotes the related work and does not select the current arXiv PDF.",
+      "pdf_sha256": "723a030b809be1958d03b06472ac79934fd64e5a890cdfeffd9508a353101a25",
+      "pdf_pages": 16,
+      "pdf_url": "https://www.roboticsproceedings.org/rss19/p026.pdf"
+    },
+    {
+      "paper_id": "sac2018",
+      "identifiers": {
+        "arxiv": "1801.01290",
+        "doi": null,
+        "arxiv_doi": "10.48550/arXiv.1801.01290",
+        "pmlr": "v80/haarnoja18b"
+      },
+      "source_version": "PMLR volume 80, ICML 2018, proceedings pages 1861-1870; publisher main PDF, retrieved 2026-09-28",
+      "pdf_sha256": "b071079b67ced375ad88cbbbfd2fc363b3b8ccd894766fb5d329e7ee30d843f5",
+      "pdf_pages": 10,
+      "pdf_url": "https://proceedings.mlr.press/v80/haarnoja18b/haarnoja18b.pdf"
+    },
+    {
+      "paper_id": "sim2real2018",
+      "identifiers": {
+        "arxiv": "1710.06537",
+        "doi": "10.1109/ICRA.2018.8460528"
+      },
+      "source_version": "arXiv:1710.06537v3, revised 2018-03-03; all evidence locators use this PDF",
+      "pdf_sha256": "a15cb24630a11218865027024ae2353f80f46d40371b42dccb2b24e9d00d62d8",
+      "pdf_pages": 8,
+      "pdf_url": "https://arxiv.org/pdf/1710.06537v3"
+    }
+  ],
+  "counts": {
+    "expected_claims": 9,
+    "numerical_expectations": 26,
+    "retrieval_queries": 6,
+    "deliberate_invalid_cases": 33
+  },
+  "invalid_cases_digest": "1c36f378a4d67e131a4a5cc3b309b2e5c5b9f5a4958fbc1624875d705299ae83",
+  "human_review_status": "pending",
+  "text_digest_encoding": "sha256 of UTF-8 bytes with CRLF normalized to LF; all other bytes preserved"
+}
